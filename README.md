@@ -37,3 +37,21 @@ Para usar a annotation @RestController precisamos adicionar a dependência sprin
   * http://localhost:8080/hello
 
 
+### Starters: Como funciona a mágica por trás do Spring Boot
+* Cada starter tem uma série de configurações que vem junto com ele
+Starters:
+* Data JPA, Security, Test
+
+
+### Configurations e Beans
+* Criar a class MinhaConfiguration
+  * Annotation @Configuration é escaneado pelo Spring Boot e aplicar as configurações
+  * As configurações são feitas através de Beans
+    * com o método applicationName e a annotation Bean com o name de applicationName, está dizendo que é para criar esse objeto String com o valor "Sistema de Vendas" no contexto da aplicação para ser usado onde precisar
+    * Poderíamos, por exemplo, fazer uma configuração de conexão com a base de dados, email, etc
+  * Annotation @Autowired e @Qualifier (este serve para identificar que ele injete a String do método que possui a Bean na variável String que possui o @Qualifier)
+
+
+
+
+
