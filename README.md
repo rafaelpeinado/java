@@ -27,10 +27,13 @@ Primeiros passos instalar:
 * Criar o arquivo VendasApplication e digitar psvm e o IntelliJ vai criar o método main e colocar a annotation **@SpringBootApplication** e esse annotation vai reconhecer que essa classe que vai inicializar uma aplicação Spring Boot
   * dentro do método main inserir o SpringApplication.run(VendasApplication.class, args);
 
+* Para rodar basta clicar no play ao lado do método main e dar um run
 
 
+### Hello World com Spring Boot
+Para usar a annotation @RestController precisamos adicionar a dependência spring-boot-starter-web e irá configurar o módulo Web do Spring Boot
+* Colocar a annotation em cima da classe, que significa que essa classe poderá mandar mensagens para o browser
+  * Usar o GetMapping para que quando digitar "/hello", irá executar o método helloWorld()
+  * http://localhost:8080/hello
 
-
-
-### Criando um projeto Spring boot do zero no IntelliJ
 
