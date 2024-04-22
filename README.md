@@ -85,7 +85,16 @@ Starters:
 * Podemos criar customizações do ambiente, como perfil para teste, produção e dev
 
 
+### Trabalhando com múltiplos ambientes e profiles
+* criar os arquivos com a convenção ainda
+  * application-development.properties
+  * application-production.properties
+* spring.profiles.active: para definir em qual ambiente a aplicação está rodando
+  * no caso dos exemplos eram **production** ou **development**
 
+* Também podemos usar os profiles para definir quais configurações funcionarão no ambiente de produção ou ambiente de desenvolvimento.
+  * No exemplo, modificamos o arquivo [MinhaConfiguration.java](./vendas/src/main/java/io/github/rafaelpeinado/MinhaConfiguration.java) com a annotation @Profile("development")
+  * Criamos uma Bean com o CommandLineRunner que tem a função de quando a aplicação subir o Spring Boot vai procurar todos os @Beans que são CommandLineRunners e vai executar o código que tem dentro dele, que é um código que executa sempre que a aplicação inicializa
 
 
 
