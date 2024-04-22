@@ -71,3 +71,22 @@ Starters:
   * No construtor podemos omitir o @Autowired, pois como a classe já está com annotation de @Service, ele já entende que o construtor está injetando uma dependência
 * Também podemos injetar diretamente na variável repository, colocando o @Autowired em cima da variável e remover o construtor
 * Ou pelo setRepository
+
+
+### Configuração externalizada: Application Properties
+* O arquivo application.properties na pasta resources já é esperado pelo Spring Boot
+  * Podemos definir configurações como, por exemplo, o nome da aplicação e usar o annotation @Value e informa a chave criada no [application.properties](./vendas/src/main/resources/application.properties)
+
+* [Common Application Properties](https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html)
+  * Configurações convencionada:
+    * server.port: define a porta que quer executar a aplicação
+    * server.servlet.context-path: informa o caminho para o servidor
+  * agora o programa irá rodar com localhost:8081/sistema-vendas
+* Podemos criar customizações do ambiente, como perfil para teste, produção e dev
+
+
+
+
+
+
+
