@@ -107,3 +107,20 @@ Para os exemplos da annotation de Gato e Cachorro foi usado o **@Target(ElementT
 Durante o exemplo deu erro, pois existem duas Beans do CommandLineRunner com o nome executar, sendo assim para diferenciar essas beans, uma das beans foi nomeada [executarAnimal]("./vendas/src/main/java/io/github/rafaelpeinado/VendasApplication.java")
 
 
+
+## Persistência e Acesso a Dados com Spring Data JPA
+### Configurando e obtendo conexões com bases de dados
+* Para começar a trabalhar com conexão de base de dados a dependência que precisamos instalar é **spring-boot-starter-data-jpa** e o driver do banco de dados **com.h2database h2**
+
+No [application.properties](./vendas/src/main/resources/application.properties):
+* spring.datasource.url=jdbc:h2:mem:testdb
+* spring.datasource.driverClassName=org.h2.Driver
+* spring.datasource.username=sa
+* spring.datasource.password=password
+* spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+* spring.h2.console.enabled=true
+* spring.h2.console.path=/h2-console
+
+E para rodar esse console, precisaremos instalar a dependência **spring-boot-starter-web**
+
+Por padrão, o Spring Boot utiliza o [HikariCP](https://github.com/brettwooldridge/HikariCP) como data source, como pool de conexões padrão
