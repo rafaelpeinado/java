@@ -171,6 +171,21 @@ Implementado métodos deletar e atualizar.
   * se não usar a annotation, teremos o erro **TransactionRequiredException**
 
 
+### Refatorando as outras operações para o JPA
+* para **atualizar**, usamos o método **merge(objeto)**
+* As entidades JPA tem um estado, por exemplo, antes de salvar ela é uma entidade que não foi salva ainda, ou seja, é uma entidade transiente e ele não possui ID, então quando fazemos o persist, ela passa a entrar no status Manager, ou seja, está sendo gerenciado. Então quando salvamos o cliente, ele passa a ser gerenciado pelo Entity Manager e fica lá no cache e dependendo de como vamos recuperar esse dado, ele não precisa nem consultar na base de dados.
+  * Então quando fazemos **merge**, significa sincronizar a mudança do dado para com o que está no EntityManager
+
+* para **remover**, basta usar o método **remove(objeto)**
+  * por id fazemos, **find(Cliente.class, id)** para encontrar o cliente 
+
+* **@Transactional(readOnly = true):** informa que a transação é somente de leitura. Sendo assim, essa pesquisa passa por algumas otimizações, o que deixa mais rápido.
+* **buscaPorNome** vamos fazer uma **pesquisa jpql**: "select c from Cliente c where c.nome = :nome"
+  * :nome define o parâmetro do JPA
+
+* No exemplo deu um erro, Removing a detached instance que significa que estamos tentando remover um Cliente transiente
+  * sendo assim, implementamos **entityManager.contains** e fazemos o merge para sincronizar os dados
+
 
 
 
