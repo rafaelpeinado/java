@@ -193,3 +193,16 @@ Implementado métodos deletar e atualizar.
   * o save tanto salva quanto atualiza os dados
 
 
+### Query Methods
+* É um método que se transforma em um query
+* Ao usar a convenção findBy Nome, ele vai fazer a busca por nome, pois nome é uma propriedade de Cliente
+* A consulta é feita em tempo de compilação
+* Outros padrões em HQL:
+  * List<Cliente> **findByNomeOrId**(String nome, Integer id), lembrando que as propriedades precisam existir em Cliente
+  * List<Cliente> **findByNomeLikeOrId**(String nome, Integer id)
+  * List<Cliente> **findByNomeOrIdOrderById**(String nome, Integer id)
+  * O find é usado para trazer uma coleção de dados
+  * para encontrar apenas um cliente, usamos Cliente **findOneByCpf**(String cpf);
+  * os parâmetros precisam estar em ordem, de acordo com o que foi colocado no query methods, por exemplo findByNomeOrId os parâmetros precisam ser (String nome, Integer id)
+  * podemos retornar um boolean, para ver se o dado existe **existsByNome**(String nome)
+
