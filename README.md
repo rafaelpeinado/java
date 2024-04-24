@@ -129,3 +129,9 @@ Por padrão, o Spring Boot utiliza o [HikariCP](https://github.com/brettwooldrid
 ### Scripts de criação do banco de dados
 Como estamos usando o H2 e ele é um banco de memória, ou seja, toda vez que a aplicação for finalizada, perdemos os dados. Sendo assim, foi criado o arquivo [data.sql](./vendas/src/main/resources/data.sql) para armazenar os scripts do banco de dados
 
+
+### Criando as classes de modelo
+* A primeira classe será domain.entity.Cliente
+* Usamos BigDecimal para representação monetária
+
+
