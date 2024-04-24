@@ -162,4 +162,15 @@ Implementado métodos deletar e atualizar.
   * É possível definir se o campo é único, nullable, etc
 
 
+### Persistindo entidades com Entity Manager
+* Não será mais necessário utilizar o arquivo data.sql para inicializar o banco, pois, por padrão, o JPA já cria os objetos no banco
+
+* O EntityManager já faz o mapeamento dos campos
+  * para salvar, usamos o método **persist(objeto)**
+  * usar a annotation **@Transactional** da SpringFramework
+  * se não usar a annotation, teremos o erro **TransactionRequiredException**
+
+
+
+
 
