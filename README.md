@@ -224,3 +224,20 @@ Implementado métodos deletar e atualizar.
 * Podemos também usar a opção deleteByNome(String nome)
   * ou usar o Query, porém como não é uma consulta, precisamos informar ao Spring que é uma transação com @Modifying
 
+
+### Mapeando as entidades Produto, Pedido e ItemsPedido
+* Foram inseridos os annotations nos atributos
+* **CLASSE PEDIDO**
+  * Na Classe Pedido vamos fazer a primeira relação entre Cliente e Pedido
+    * sendo assim, usamos a annotation **@ManyToOne**, pois temos muitos pedidos para um cliente, então o Many é referente a entidade atual
+    * além disso, usamos o **@JoinColumn**, para apontar que é um foreign key
+    * se por algum motivo eu precisar fazer o mapeamento de todos os pedidos do cliente, podemos definir um **Set**<Pedido> na classe Cliente com **@OneToMany** e o mappedBy, pois não temos uma chave para pedidos, quem tem a chave é o Pedido. Desta forma, o join é feito por mappedBy
+      * ao invés de Set, poderia ser Collection, List, entre outros
+      * o Set evita alguns erros do Hibernate
+    * Como o total é um BigDecimal e representa um valor, podemos usar @Column(name = "total", **length** = 20, **precision** = 2)
+
+* **CLASSE ITEMPEDIDO**
+  * foi feito as relações com @ManyToOne
+  * foi inserido uma List<ItemPedido> na classe Pedido, para ver o comportamento em relação o Set
+    * O Set não aceita pedidos repetidos para um cliente 
+  * Em Produto não foi feito a associação dos ItemPedido, pois não precisamos resgatar os ItemsPedidos
