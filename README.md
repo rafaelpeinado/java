@@ -214,7 +214,13 @@ Implementado métodos deletar e atualizar.
 * spring.jpa.properties.hibernate.format_sql=true
 
 
-
-
-
+### Trabalhando com @Query
+* Como criar queries string para executar dentro do JPA
+* Nesse caso podemos dar qualquer nome para o método e devemos inserir a annotation **@Query**
+* Precisa inserir a annotation @Param para informar que aquele parâmetro do método está associado ao :nome do value da Query
+* Também podemos usar SQL nativo ao invés do HQL
+  * desta forma, mudaríamos de: @Query(value = "select c from Cliente c where c.nome like :nome", nativeQuery = true) 
+  * para: @Query(value = "select * from cliente c where c.nome like %:nome%", nativeQuery = true)
+* Podemos também usar a opção deleteByNome(String nome)
+  * ou usar o Query, porém como não é uma consulta, precisamos informar ao Spring que é uma transação com @Modifying
 
