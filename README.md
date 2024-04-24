@@ -147,3 +147,8 @@ Iremos usar o JdbcTemplate que já vem com as conexões configurada e usamos o @
 
 * System.out::println: **::** é método de reference do Java 8
 
+
+### Concluindo o cadastro de clientes
+Implementado métodos deletar e atualizar.
+
+
