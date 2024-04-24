@@ -206,3 +206,15 @@ Implementado métodos deletar e atualizar.
   * os parâmetros precisam estar em ordem, de acordo com o que foi colocado no query methods, por exemplo findByNomeOrId os parâmetros precisam ser (String nome, Integer id)
   * podemos retornar um boolean, para ver se o dado existe **existsByNome**(String nome)
 
+
+### Logando o SQL gerado no console
+* Feature do Spring Data JPA, um recurso conhecido do Hibernate ou JPA
+  * Mostrar na saída do console o SQL que está sendo gerado nas consultas
+* spring.jpa.properties.hibernate.show_sql=true
+* spring.jpa.properties.hibernate.format_sql=true
+
+
+
+
+
+
