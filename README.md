@@ -187,5 +187,9 @@ Implementado métodos deletar e atualizar.
   * sendo assim, implementamos **entityManager.contains** e fazemos o merge para sincronizar os dados
 
 
+### Introdução aos repositórios Spring Data
+* JPA Repositories: interface para ter algumas implementações prontas
+  * Já tem o EntityManager encapsulado
+  * o save tanto salva quanto atualiza os dados
 
 
