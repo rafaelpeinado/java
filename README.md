@@ -152,3 +152,14 @@ Iremos usar o JdbcTemplate que já vem com as conexões configurada e usamos o @
 Implementado métodos deletar e atualizar.
 
 
+### Mapeando a Entidade Cliente para JPA
+* Para sinalizar que é uma entidade JPA, devemos usar a annotation @Entity e, se quiser, @Table
+  * A @Table não é obrigatória, a menos que o nome da entidade seja diferente do nome da tabela
+  * por exemplo, se a tabela se chamasse tb_cliente, seria necessário usar o @Table(name = "tb_cliente") e também podemos definir qual schema vamos usar
+* **@Id:** para definir qual a primary key da entidade
+* **@GeneratedValue:** para auto incremento
+* **@Column:** também é opcional igual ao annotation @Table, pois se o nome da propriedade for igual ao da coluna, não é necessário usar.
+  * É possível definir se o campo é único, nullable, etc
+
+
+
