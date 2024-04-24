@@ -1,7 +1,7 @@
 package io.github.rafaelpeinado;
 
 import io.github.rafaelpeinado.domain.entity.Cliente;
-import io.github.rafaelpeinado.domain.repositorio.Clientes;
+import io.github.rafaelpeinado.domain.repository.Clientes;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

@@ -241,3 +241,11 @@ Implementado métodos deletar e atualizar.
   * foi inserido uma List<ItemPedido> na classe Pedido, para ver o comportamento em relação o Set
     * O Set não aceita pedidos repetidos para um cliente 
   * Em Produto não foi feito a associação dos ItemPedido, pois não precisamos resgatar os ItemsPedidos
+
+
+### Criando os Repositórios das entidades
+* O JPARepository tem uma implementação padrão no Spring Data, SimpleJpaRepository
+
+
+
+
