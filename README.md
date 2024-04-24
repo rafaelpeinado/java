@@ -135,3 +135,15 @@ Como estamos usando o H2 e ele é um banco de memória, ou seja, toda vez que a 
 * Usamos BigDecimal para representação monetária
 
 
+### Salvando e recuperando clientes
+* Agora vamos criar os repositories ou DAO (Data Access Object), é uma classe que encapsula todas as operações de uma entidade
+
+* A annotation @Repository recebe o annotation @Component e também informa para o Spring Boot, que essa classe vai fazer operações na base de dados e os Exception Translator
+  * Caso não queira usar o @Repository, pode-se usar o @Component
+
+Iremos usar o JdbcTemplate que já vem com as conexões configurada e usamos o @Autowired para injetar o JdbcTemplate e este permite fazer operações na base de dados
+* usamos o método **update()** para inserir, atualizar ou deletar no banco de dados 
+* usamos o método **query()** para consultar o banco de dados, e o segundo parâmetro precisa ser um **RowMapper**, que mapeia o resultado o banco de dados para uma classe
+
+* System.out::println: **::** é método de reference do Java 8
+
