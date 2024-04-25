@@ -294,8 +294,12 @@ public void salvarFuncionario(Funcionario fun){
 * http://localhost:8080/api/clientes/hello/nome-do-cliente
 
 
-
-
+### Mapeando as Requisições com Request Mapping
+* **@RequestMapping(value = "/hello/{nome}", method = RequestMethod.GET):** eu posso definir mais de um value, informando uma array de urls
+  * podemos definir **consumes:** podemos mandar no corpo da requisição objetos do tipo JSON ou XML = {"application/json", "application/xml"} (mas como no exemplo é do tipo GET, não será enviado nada)
+  * **value:** array de urls = {"/hello/{nome}", "/{nome}"}
+  * **produces:** tem a mesma lógica do consumes, porém é a forma como vamos retornar os objetos e é o cliente quem definirá o tipo de retorno
+  * caso for usado o método POST, igual no helloClientes2, o consumes poderá ser definido e o body será recebido pela annotation @RequestBody
 
 
 
