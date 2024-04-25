@@ -272,10 +272,36 @@ public void salvarPedido(Pedido pedido){
 ```
 
 * **Cenário 2:** Tenho muitas entidades na aplicação e de bancos de dados distintos.
-
+  * Por exemplo, tenho mais de dois banco de dados. O MySQL e o Oracle. Sendo assim, devemos informar para qual banco aquela informação será enviada. 
+  * Além disso, é necessário necessário configurar o transactionManager de cada uma nas suas configurações.
+  * 
 ``` java
 @Transactional("transactionManagerMySQL")
 public void salvarFuncionario(Funcionario fun){    
     funcionarioRepository.save(fun);
 }
 ```
+
+
+## Spring Web: Desenvolvimento de API RESTful
+### Criando o controller de clientes
+* Vamos informar que é um Controller e vai receber requisições HTTP e vai se comunicar dentro da arquitetura REST
+  * **@Controller:** definir o annotation que vai informar que essa é a camada que vai se comunicar com os clientes 
+  * **@RequestMapping("/api/clientes"):** vai ser a url base da api de clientes com "/api/clientes", ou seja, toda requisição que tiver essa url, ele vai entrar no ClienteController. **Esse RequestMapping não é obrigatório. Todo o caminho pode ser definido no RequestMapping do método**
+  * **@RequestMapping(value = "/hello/{nome}", method = RequestMethod.GET):** definiu a url que será usada para entrar no método helloClientes, do tipo GET
+    * **@PathVariable("nome"):** informando que vamos receber uma variável do Path
+  * **@ResponseBody:** para definir que a String que está sendo retornada é o corpo de uma resposta
+* http://localhost:8080/api/clientes/hello/nome-do-cliente
+
+
+
+
+
+
+
+## Observações
+### Atalhos IntelliJ
+* Ctrl + O: Organiza todos os importes, inclusive apaga os que não estão sendo usados
+* Ctrl + Alt + L: Indenta o código
+* Alt + Insert: Getter and Setter, toString, etc
+
