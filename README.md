@@ -374,6 +374,11 @@ public void salvarFuncionario(Funcionario fun){
   * vamos colocar **@Service**
 
 
+### Trabalhando com modelo DTO
+* Essa classe DTO (Data Transfer Object) é um padrão que serve para mapear o objeto com propriedades simples que recebemos via requisição e depois transformamos no modelo de dados para persistir
+* ItemPedidoDTO
+* PedidoDTO
+
 
 ## Observações
 ### Atalhos IntelliJ
