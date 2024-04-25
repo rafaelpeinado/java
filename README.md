@@ -379,6 +379,32 @@ public void salvarFuncionario(Funcionario fun){
 * ItemPedidoDTO
 * PedidoDTO
 
+Exemplo:
+``` json
+{
+    "cliente": 1,
+    "total": 100,
+    "items": [
+        {
+            "produto": 1,
+            "quantidade": 10
+        }
+    ]
+}
+```
+
+### Utilizando o Projeto Lombok
+* Em todas as classes estamos criando os getters e setters
+* Para eliminar essa necessidade, podemos usar o [Lombok](https://projectlombok.org/)
+* [Instalar o plugin do Lombok](https://projectlombok.org/download)
+  * Serve para reconhecer os códigos que não vamos colocar nas classes
+  * Sendo assim, usamos as annotations **@Getter** e **@Setter**. Quando colocamos essas annotations, é para inserir os getters e setters na hora de compilar, igual exemplo na pasta [target](./vendas/target/classes/io/github/rafaelpeinado/domain/entity/Pedido.class)
+  * Também temos as annotation **@ToString**, **@EqualsAndHashCode**, **@NoArgsConstructor**, **@AllArgsConstructor**, **@Data**
+    * **@Data:** é a compilação de algumas annotations como **Getter, Setter, RequiredArgsConstructor, ToString, EqualsAndHashCode**
+    * **@[EqualsAndHashCode](https://projectlombok.org/features/EqualsAndHashCode)** 
+* Mesmo usando o Lombok, ainda podemos criar o próprio getter ou setter, pois as vezes precisamos fazer um getter personalizado, por exemplo
+
+
 
 ## Observações
 ### Atalhos IntelliJ
