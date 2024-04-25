@@ -352,6 +352,20 @@ public void salvarFuncionario(Funcionario fun){
   * para isso, podemos usar a annotation **@ResponseStatus(HttpStatus.CREATED)**
 
 
+### Desafio da API de Produtos
+* Consultar
+* Criar
+* Remover
+* Atualizar
+* Pesquisar
+
+
+### Implementando a API de Produtos
+* importação estática e não precisaria colocar toda o HttpStatus
+  * import static org.springframework.http.HttpStatus.* e depois só usar CREATE, NO_CONTENT, etc
+  * return Void.TYPE para não retornar null
+
+
 
 ## Observações
 ### Atalhos IntelliJ
