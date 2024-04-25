@@ -4,10 +4,7 @@ import io.github.rafaelpeinado.domain.entity.Cliente;
 import io.github.rafaelpeinado.domain.repository.Clientes;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
@@ -31,4 +28,9 @@ public class ClienteController {
         return ResponseEntity.notFound().build();
     }
 
+    @PostMapping("")
+    @ResponseBody
+    public ResponseEntity<Cliente> save(@RequestBody Cliente cliente) {
+        return ResponseEntity.ok(clientes.save(cliente));
+    }
 }

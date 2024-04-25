@@ -316,6 +316,17 @@ public void salvarFuncionario(Funcionario fun){
 * **clientes.findById(id):** retorna um Optional, porque pode ou não ter um cliente
 
 
+### Requisição POST e Request Body
+* No Postman, vamos criar um Request do 
+  * tipo POST
+  * url: http://localhost:8080/api/clientes 
+  * Body do tipo raw JSON, pois podemos digitar o que quisermos
+
+* Para não vir os pedidos quando fizer um getClienteById, usamos o **@JsonIgnore**
+
+
+
+
 
 ## Observações
 ### Atalhos IntelliJ
