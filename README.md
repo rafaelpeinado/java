@@ -366,6 +366,14 @@ public void salvarFuncionario(Funcionario fun){
   * return Void.TYPE para não retornar null
 
 
+### Criação do Controller e Serviço de Pedidos
+* Como vamos precisar de mais de um repository, vamos criar um serviço
+* Ao inserir a interface no construtor, tivemos um erro que o PedidoController requer um bean do tipo PedidoService
+  * Para isso, criamos o PedidoServiceImpl
+  * isso é criado, porque é uma boa prática para facilitar ao fazer testes unitários ou de integração
+  * vamos colocar **@Service**
+
+
 
 ## Observações
 ### Atalhos IntelliJ
