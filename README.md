@@ -246,6 +246,9 @@ Implementado métodos deletar e atualizar.
 ### Criando os Repositórios das entidades
 * O JPARepository tem uma implementação padrão no Spring Data, SimpleJpaRepository
 
-
+### Fazendo consultas com relacionamentos JPA
+* Carregar os pedidos de um cliente usando fetch, que seria trazer junto
+  * fetch default LAZY, significa que toda vez que obtermos o cliente da base de dados, ele não vai trazer os pedidos, apenas se fizer um fetch e pudemos mudar para o EAGER usando **@OneToMany(mappedBy = "cliente", fetch = FetchType.EAGER)**, mas não é recomendado, pois tem momentos que queremos carregar os clientes e não precisaremos dos Pedidos. E usando o EAGER, toda vez que usarmos o cliente, virão os pedidos
+  * foi criado o método **findClienteFetchPedidos()** que fará um left join para trazer todos os clientes, independente se ele tiver pedidos ou não
 
 
