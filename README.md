@@ -258,9 +258,24 @@ Implementado métodos deletar e atualizar.
 * Não é muito usual trazer os pedidos junto com cliente (findClienteFetchPedidos), exceto se tivermos um formulário ou tela no sistema, que queremos mostrar o cliente e a lista de pedidos do cliente.
 
 
+### Artigo: Algumas considerações sobre @Transactional
+* **Cenário 1:** Tenho um método no meu serviço que salva um pedido, os itens do pedido e a forma de pagamento.
+  * Caso um dos passos dê erro na hora de gravar as informações no banco, será feito um rollback da transação como um todo
 
+``` java
+@Transactional
+public void salvarPedido(Pedido pedido){    
+    pedidoRepository.save(pedido);    
+    itemPedidoRepository.save(pedido.getItens());    
+    pagamentoRepository.save(pedido.getPagamento());
+}
+```
 
+* **Cenário 2:** Tenho muitas entidades na aplicação e de bancos de dados distintos.
 
-
-
-
+``` java
+@Transactional("transactionManagerMySQL")
+public void salvarFuncionario(Funcionario fun){    
+    funcionarioRepository.save(fun);
+}
+```
