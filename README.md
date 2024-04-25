@@ -344,10 +344,18 @@ public void salvarFuncionario(Funcionario fun){
 * Todas essa configuração de matcher é enviado via queryParams
 
 
+### @ResponseStatus e @RestController: Refatorando api de clientes
+* Vamos remover o @Controller para **@RestController**, que é uma annotation especializada de controller, que já vem com a annotation **@ResponseBody**, o que significa que não precisamos inserir essa annotation em todos os métodos
+* Vamos remover o **ResponseEntity** e retornar direto a entidade
+  * Se retornarmos o objeto direto, quer dizer que o response é OK
+* Quando criamos um recurso no servidor, nós retornamos 201 que é created
+  * para isso, podemos usar a annotation **@ResponseStatus(HttpStatus.CREATED)**
+
+
 
 ## Observações
 ### Atalhos IntelliJ
-* Ctrl + O: Organiza todos os importes, inclusive apaga os que não estão sendo usados
+* Ctrl + Alt + O: Organiza todos os importes, inclusive apaga os que não estão sendo usados
 * Ctrl + Alt + L: Indenta o código
 * Alt + Insert: Getter and Setter, toString, etc
 
