@@ -252,3 +252,15 @@ Implementado métodos deletar e atualizar.
   * foi criado o método **findClienteFetchPedidos()** que fará um left join para trazer todos os clientes, independente se ele tiver pedidos ou não
 
 
+### Carregando os pedidos por cliente
+* para arrumar o problema do banco de dados basta usar **@Column(name = "total", precision = 10, scale = 2)**, pois precision define o tamanho do número e o scale a quantidade de casas
+* Também podemos buscar no repositórios de Pedidos fazendo um **findByCliente()**
+* Não é muito usual trazer os pedidos junto com cliente (findClienteFetchPedidos), exceto se tivermos um formulário ou tela no sistema, que queremos mostrar o cliente e a lista de pedidos do cliente.
+
+
+
+
+
+
+
+
