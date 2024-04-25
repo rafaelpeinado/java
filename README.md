@@ -302,6 +302,20 @@ public void salvarFuncionario(Funcionario fun){
   * caso for usado o método POST, igual no helloClientes2, o consumes poderá ser definido e o body será recebido pela annotation @RequestBody
 
 
+### Requisição GET com parâmetros e Response Entity
+* Não vamos definir o consumes e o produces, porque o Spring trabalha com JSON por padrão
+* Toda a annotation **RequestMapping** pode ser trocada por uma annotation especializada, a **GetMapping**
+  * Temos que manter o **ResponseBody**, porque ele retorna um objeto do tipo JSON
+* O retorno do objeto é do tipo **ResponseEntity**
+  * é um objeto que representa o corpo da resposta
+  * podemos fazer uma série de configurações nele
+    * HttpStatus
+    * Body
+    * Headers
+* **(@PathVariable Integer id):** não precisa inserir o nome, porque os parâmetros são iguais
+* **clientes.findById(id):** retorna um Optional, porque pode ou não ter um cliente
+
+
 
 ## Observações
 ### Atalhos IntelliJ
