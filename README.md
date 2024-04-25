@@ -325,6 +325,10 @@ public void salvarFuncionario(Funcionario fun){
 * Para não vir os pedidos quando fizer um getClienteById, usamos o **@JsonIgnore**
 
 
+### Delete Mapping: deletando um recurso no servidor
+* **NoContent:** porque é um status de sucesso, mas não precisamos retornar nada e também não precisa receber nenhuma informação
+* **NotFound:** como estamos navegando para uma url, caso o recurso não exista, devemos informar not found
+
 
 
 
