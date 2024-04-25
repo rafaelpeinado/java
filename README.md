@@ -337,6 +337,12 @@ public void salvarFuncionario(Funcionario fun){
 * **Supplier:** é uma interface funcional que não recebe nenhum parâmetro e retorna qualquer coisa
 
 
+### Pesquisa de Clientes por parâmetros
+* **Example:** vai pegar as propriedades que estão populadas e vai criar um Example
+* **matching().withIgnoreCase():** ignorar que independente da String estar em caixa alta ou baixa (case), que faça o matching
+* **withStringMatcher():** a forma como vamos definir como é para procurar os valores String
+* Todas essa configuração de matcher é enviado via queryParams
+
 
 
 ## Observações
