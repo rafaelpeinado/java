@@ -330,6 +330,13 @@ public void salvarFuncionario(Funcionario fun){
 * **NotFound:** como estamos navegando para uma url, caso o recurso não exista, devemos informar not found
 
 
+### Put Mapping - Atualizando um cliente
+* Put é usado para atualizar integralmente um recurso no servidor, por exemplo, se não enviarmos um dos dados, o dado será salvo como nulo
+* **map:** método do Optional que caso tenha um cliente, entrará no método
+* **NoContent:** pois quando estamos fazendo atualização não precisamos retornar nenhum item
+* **Supplier:** é uma interface funcional que não recebe nenhum parâmetro e retorna qualquer coisa
+
+
 
 
 ## Observações
