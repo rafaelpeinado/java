@@ -417,6 +417,34 @@ Exemplo:
 * No método salvar nós usamos a annotation **@Transactional**, pois ele vai garantir que tudo o que está no método seja salvo, ou ele faz um rollback
 
 
+### Realizando um pedido através do Postman
+* POST com http://localhost:8080/api/pedidos, sem cliente cadastrado causou erro 500, o que significa que temos que tratar esse erro
+
+``` json
+{
+    "cliente": 1,
+    "total": 100,
+    "items": [
+        {
+            "produto": 1,
+            "quantidade": 10
+        }
+    ]
+}
+```
+
+
+### Spring Boot Dev tools
+``` xml
+<dependency>
+  <groupId>org.springframework.boot</groupId>
+  <artifactId>spring-boot-devtools</artifactId>
+</dependency>
+```
+
+* Usando essa dependência não há necessidade de reiniciar a aplicação toda vez que fizer um ajuste
+* Após fazer terminar de fazer as alterações, basta usar Ctrl + F9
+
 
 
 ## Observações
