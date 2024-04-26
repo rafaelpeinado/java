@@ -2,6 +2,8 @@ package io.github.rafaelpeinado.rest.controller;
 
 import io.github.rafaelpeinado.domain.entity.ItemPedido;
 import io.github.rafaelpeinado.domain.entity.Pedido;
+import io.github.rafaelpeinado.domain.enums.StatusPedido;
+import io.github.rafaelpeinado.rest.dto.AtualizacaoStatusPedidoDTO;
 import io.github.rafaelpeinado.rest.dto.InformacaoItemPedidoDTO;
 import io.github.rafaelpeinado.rest.dto.InformacoesPedidoDTO;
 import io.github.rafaelpeinado.rest.dto.PedidoDTO;
@@ -47,8 +49,15 @@ public class PedidoController {
                 .cpf(pedido.getCliente().getCpf())
                 .nomeCliente(pedido.getCliente().getNome())
                 .total(pedido.getTotal())
+                .status(pedido.getStatus().name())
                 .items(converter(pedido.getItems()))
                 .build();
+    }
+
+    @PatchMapping("{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    private void updateStatus(@PathVariable Integer id, @RequestBody AtualizacaoStatusPedidoDTO dto) {
+        service.atualizaStatus(id, StatusPedido.valueOf(dto.getNovoStatus()));
     }
 
     private List<InformacaoItemPedidoDTO> converter(List<ItemPedido> items) {

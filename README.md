@@ -463,6 +463,22 @@ Exemplo:
   * **@Param("id"):** definir o parâmetro
 
 
+### Criando o status do Pedido
+* **@Enumerated:** Enum não existe no banco de dados, mas usamos isso para gravar como String
+  * **EnumType.STRING:** grava a String
+  * **EnumType.ORDINAL:** grava a posição
+* .status(pedido.getStatus()**.name()**): o name() pega um Enum e transforma em uma String
+
+
+### Patch Mapping - realizando cancelamento de pedidos
+* @**PatchMapping:** só queremos atualizar um campo e todos os outros campos devem ser ignorados. Então, ao invés de PUT usamos o PATCH.
+* Não é boa prática usar a camada de serviços para lançar exceções de API
+* Também não é legal fazer um RegraNegocioException, porque não é uma regra de negócio
+* **StatusPedido.valueOf(dto.getNovoStatus()):** para encontrar o valor da Enum a partir de um String
+
+
+
+
 
 
 
