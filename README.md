@@ -446,6 +446,17 @@ Exemplo:
 * Após fazer terminar de fazer as alterações, basta usar Ctrl + F9
 
 
+### Utilizando o Controller Advice e os Exception Handlers para tratar erros na API
+* **@ControllerAdvice:** conseguimos fazer tratamentos usando exception handlers
+* **Arrays** tem um método estático, **asList** que recebe um objeto e transforma em uma **ArrayList**
+* **@ExceptionHandler:** marca para ser um tratador de erro. Toda vez que o projeto lançar um RegraNegocioException, ele vai cair dentro do ExceptionHandler handleRegraNegocioException.
+  * Usar o **@ResponseBody** ou **@RestControllerAdvice** que já possui um ResponseBody
+  * @ResponseStatus(HttpStatus.BAD_REQUEST)
+
+
+
+
+
 
 ## Observações
 ### Atalhos IntelliJ
