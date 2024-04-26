@@ -405,6 +405,19 @@ Exemplo:
 * Mesmo usando o Lombok, ainda podemos criar o próprio getter ou setter, pois as vezes precisamos fazer um getter personalizado, por exemplo
 
 
+### Método para realização de um pedido
+* Em PedidoServiceImpl removemos o construtor e usamos o **@RequiredArgsConstructor** que cria um construtor com todos os argumentos obrigatórios e para definir quais são obrigatórios é só sinalizar com **final**, que tem que ser instanciado no momento da criação da classe
+* Como o **clientesRepository.findById(idCliente)** retorna um optional e pode retornar um erro, pois podemos informar uma id que não existe. Nesse caso não vamos mandar um not found, porque não estamos tentando procurar um dado no servidor, e sim salvar. Então lançamos uma exception específica para esse caso de erro na regra de negócio.
+  * Dessa forma, vamos criar a classe RegraNegocioException
+* Temos que salvar o pedido e também os items de pedido, porque não existem pedido sem items
+* Precisar finalizar **converterItems** com **collect**, porque o map do stream, retorna outra stream contendo os novos itens. Então temos que transformar a stream em uma lista de ItemsPedido
+
+* No método salvar, nós criamos um pedido e ainda não salvamos pedido, ou seja, ele ainda não tem um id quando mandamos para converterItems. Sendo assim, no map nós não podemos salvar os itens do pedido, porque ele precisa desse id.
+  * Após **repository.save(pedido)** nós já temos um id, então agora podemos fazer um **itemsPedidoRepository.saveAll(itemsPedido)** de todos os itens. 
+* No método salvar nós usamos a annotation **@Transactional**, pois ele vai garantir que tudo o que está no método seja salvo, ou ele faz um rollback
+
+
+
 
 ## Observações
 ### Atalhos IntelliJ

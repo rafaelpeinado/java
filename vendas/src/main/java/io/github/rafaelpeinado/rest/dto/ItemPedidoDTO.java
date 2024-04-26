@@ -4,14 +4,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.math.BigDecimal;
-import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class ItemPedidoDTO {
-    private Integer cliente;
-    private BigDecimal total;
-    private List<ItemPedidoDTO> items;
+    private Integer produto;
+    private Integer quantidade;
 }
