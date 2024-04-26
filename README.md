@@ -454,6 +454,14 @@ Exemplo:
   * @ResponseStatus(HttpStatus.BAD_REQUEST)
 
 
+### Obtendo os detalhes de um pedido
+* Estamos usando **InformacoesPedidoDTO**, pois a entidade Pedido tem dados do cliente, e nesse caso não queremos expor os dados do cliente publicamente
+* **@Builder:** ele vai gerar com todas as propriedades uma classe builder e vai disponibilizar essa instância para construir um objeto de InformacoesPedidoDTO
+* Em [PedidoController](./vendas/src/main/java/io/github/rafaelpeinado/rest/controller/PedidoController.java) no método **InformacoesPedidoDTO** usamos o InformacoesPedidoDTO.builder() na qual eu consigo ir settando os valores sem precisar instanciar o objeto
+* **Collections.emptyList():** não é boa prática retornar objetos nulos, é melhor retornar uma lista vazia
+* Obtivemos um erro, pois não aceitou a sintaxe do Query Methods, então precisamos criar uma @Query no **findByIdFetchItems**
+  * **@Param("id"):** definir o parâmetro
+
 
 
 
@@ -463,4 +471,6 @@ Exemplo:
 * Ctrl + Alt + O: Organiza todos os importes, inclusive apaga os que não estão sendo usados
 * Ctrl + Alt + L: Indenta o código
 * Alt + Insert: Getter and Setter, toString, etc
+* Ctrl + F9: Build da aplciação
+* Alt + Enter: sugestões para correção de erros
 
