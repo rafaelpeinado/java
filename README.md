@@ -477,8 +477,23 @@ Exemplo:
 * **StatusPedido.valueOf(dto.getNovoStatus()):** para encontrar o valor da Enum a partir de um String
 
 
+## Bean Validation
+### Starter Validation
+
+``` xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-validation</artifactId>
+</dependency>
+```
 
 
+### Utilizando e Testando o Bean Validation
+* **@NotEmpty(message = ""):** o nome não pode ser nulo ou vazio, e se for retornará uma mensagem
+* **@Valid:** colocar no método da request que a validação aconteça
+* Quando o nome do cliente não é passado, foi retornado um Bad Request e informando uma lista de erros
+* Criamos um Exception do tipo MethodArgumentNotValidException, para que o retorno do erro seja padronizado
+  * **.map(erro -> erro.getDefaultMessage()):** vai retornar a mensagem que informamos no @NotEmpty
 
 
 
