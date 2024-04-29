@@ -505,6 +505,22 @@ Exemplo:
 * **@NotNull:** no caso de preço, ou é zero ou é nulo
 
 
+### Validando a entidade Pedido
+* Vamos validar o RequestBody que estamos recebendo, então vamos validar o **PedidoDTO**
+* Vamos criar um validador customizado para Lista dos itens do pedido
+
+
+### Criando uma annotation de validação customizada
+* **@Retention(RetentionPolicy.RUNTIME):** para ser verificada em tempo de execução
+* **@Target:** onde podemos colocar a annotation
+* **@Constraint(validatedBy = NotEmptyListValidator.class):** aqui é onde vamos dizer que a annotation é uma annotation de validação e temos que inserir classe de validação
+  * A classe criada é a **NotEmptyListValidator**, que implementa **ConstraintValidator** e recebe dois parêmetros, o NotEmptyList que é a annotation criada e o tipo de dado que vai ser validado, no caso, List
+  * Além disso, é obrigatório ter os três métodos
+    * message(), groups(), payload()
+    * Toda validation de validação tem esses métodos
+* No NotEmptyListValidator podemos pegar algumas informações como:
+  * o método **initialize** nos permite pegar algum dado da annotation
+  * podemos inserir mais propriedades no **NotEmptyList**
 
 
 ## Observações
