@@ -617,8 +617,9 @@ protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 * No **UsuarioServiceImpl**, vamos fazer a injeção do PasswordEncoder e fazer o build de um objeto User
 
 
-
-
+### Implementando o cadastro de usuários
+* Criou uma entidade usuário
+* Ao salvar o usuário, a senha está sendo mostrada. Sendo assim, vamos criar um DTO para não retornar a senha no request
 
 
 
