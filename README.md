@@ -550,10 +550,13 @@ Exemplo:
 * Criamos o arquivo SecurityConfig e colocamos a annotation **@EnableWebSecurity**
   * Não precisamos colocar @Configuration
   * Ao extender **WebSecurityConfigurerAdapter**, temos acesso a dois métodos **configure**:
-    * Um recebe o **HttpSecurity**:
-    * e outro **AuthenticationManagerBuilder**: vai trazer os objetos que fazem autenticação dos usuários e adicionar os usuários dentro do contexto do Security
+    * **AuthenticationManagerBuilder**: vai trazer os objetos que fazem autenticação dos usuários e adicionar os usuários dentro do contexto do Security
+    * **HttpSecurity**: pega o usuário que está autenticado e verifica se tem autorização para a página
 
 
+### Password encoder
+* **passwordEncoder:** vai criptografar e descriptografar as senhas dos usuários
+* **BCryptPasswordEncoder:** é um algoritmo avançado de autenticação e toda vez que o usuário passa uma senha, ele gera um hash. Toda vez que gera um hash da mesma senha, ele gera um hash diferente
 
 
 
