@@ -588,6 +588,10 @@ auth.inMemoryAuthentication()
 * o user recebeu role de USER e ADMIN
 
 
+### Autenticação Basic
+* **httpBasic:** vamos mandar informações através do header
+* No Postman, Authorization -> Type -> Basic Auth
+
 
 
 
