@@ -593,6 +593,32 @@ auth.inMemoryAuthentication()
 * No Postman, Authorization -> Type -> Basic Auth
 
 
+### Implementação do UserDetailsService
+* Foi criado o **UsuarioServiceImpl** que implementa a interface **UserDetailsService** do SpringFramework
+  * Essa interface serve para definir o carregamento do usuários a partir da base de dados
+* Colocar a annotation **@Service**
+* em seguida:
+
+``` java
+@Autowired
+    private UsuarioServiceImpl usuarioService;
+```
+
+* Trocamos o usuário em memória por userDetailsService:
+
+``` java
+protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth
+                .userDetailsService(usuarioService)
+                .passwordEncoder(passwordEncoder());
+    }
+```
+
+* No **UsuarioServiceImpl**, vamos fazer a injeção do PasswordEncoder e fazer o build de um objeto User
+
+
+
+
 
 
 
