@@ -546,6 +546,17 @@ Exemplo:
 * **http://localhost:8080/login:** será direcionado para tela de login automaticamente
 
 
+### Criando a classe de configuração do Security
+* Criamos o arquivo SecurityConfig e colocamos a annotation **@EnableWebSecurity**
+  * Não precisamos colocar @Configuration
+  * Ao extender **WebSecurityConfigurerAdapter**, temos acesso a dois métodos **configure**:
+    * Um recebe o **HttpSecurity**:
+    * e outro **AuthenticationManagerBuilder**: vai trazer os objetos que fazem autenticação dos usuários e adicionar os usuários dentro do contexto do Security
+
+
+
+
+
 ## Observações
 ### Atalhos IntelliJ
 * Ctrl + Alt + O: Organiza todos os importes, inclusive apaga os que não estão sendo usados
