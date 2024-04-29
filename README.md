@@ -523,6 +523,14 @@ Exemplo:
   * podemos inserir mais propriedades no **NotEmptyList**
 
 
+### Internacionalização
+* Foi criado o arquivo message.properties e informado nas áreas de mensagem {nome.do.campo}
+* Depois foi criado a classe **InternacionalizacaoConfig**
+  * criar um ReloadableResourceBundleMessageSource e definir qual é o arquivo base com setBasename
+  * não é necessário colocar .properties, pois o ReloadableResourceBundleMessageSource já subentende que é um arquivo properties
+* **LocalValidatorFactoryBean** vai pegar o message source e é responsável pela interpolação
+
+
 ## Observações
 ### Atalhos IntelliJ
 * Ctrl + Alt + O: Organiza todos os importes, inclusive apaga os que não estão sendo usados
