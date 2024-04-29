@@ -562,6 +562,7 @@ Exemplo:
 ### Configurando autenticação em memória
 * **auth.inMemoryAuthentication():** para criar configuração em memória
   * Agora, ao iniciar, ele não gera uma senha temporária
+
 ``` java
 auth.inMemoryAuthentication()
                 .passwordEncoder(passwordEncoder())
@@ -569,6 +570,17 @@ auth.inMemoryAuthentication()
                 .password(passwordEncoder().encode("123"))
                 .roles("USER");
 ```
+
+
+### Configurando a autorização de urls
+* **csrf:** permite ter uma segurança entre a aplicação web e backend, mas como estamos usando o modelo REST, é stateless e não precisa do csrf
+* **antMatchers():**
+  * **authenticated:** precisa estar autenticado para acessar a URL e/ou método informados
+  * **hasRole:** se tem a role que foi definida, por exemplo, "USER"
+  * **hasAuthority:** se tem a autorização, por exemplo, "MANTER_USUARIO"
+  * **permitAll:** ela é permitida por todos
+* **and:** volta para raiz e acrescenta mais uma configuração HttpSecurity
+* **formLogin:** cria tela de login
 
 
 
