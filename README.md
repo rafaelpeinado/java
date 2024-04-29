@@ -496,6 +496,16 @@ Exemplo:
   * **.map(erro -> erro.getDefaultMessage()):** vai retornar a mensagem que informamos no @NotEmpty
 
 
+### Validando a entidade cliente
+* **@CPF:** validador de CPF
+
+
+### Validando a Entidade Produto
+* **@NotEmpty:** é usado em Strings, porque não queremos nem nulo e nem vazio
+* **@NotNull:** no caso de preço, ou é zero ou é nulo
+
+
+
 
 ## Observações
 ### Atalhos IntelliJ
