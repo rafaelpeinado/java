@@ -583,6 +583,13 @@ auth.inMemoryAuthentication()
 * **formLogin:** cria tela de login
 
 
+### Configurando as Roles e Authorities
+* **hasAnyRole:** recebe array de roles
+* o user recebeu role de USER e ADMIN
+
+
+
+
 
 
 ## Observações
