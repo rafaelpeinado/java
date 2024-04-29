@@ -559,6 +559,19 @@ Exemplo:
 * **BCryptPasswordEncoder:** é um algoritmo avançado de autenticação e toda vez que o usuário passa uma senha, ele gera um hash. Toda vez que gera um hash da mesma senha, ele gera um hash diferente
 
 
+### Configurando autenticação em memória
+* **auth.inMemoryAuthentication():** para criar configuração em memória
+  * Agora, ao iniciar, ele não gera uma senha temporária
+``` java
+auth.inMemoryAuthentication()
+                .passwordEncoder(passwordEncoder())
+                .withUser("fulano")
+                .password(passwordEncoder().encode("123"))
+                .roles("USER");
+```
+
+
+
 
 ## Observações
 ### Atalhos IntelliJ
