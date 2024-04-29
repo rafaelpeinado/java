@@ -531,6 +531,21 @@ Exemplo:
 * **LocalValidatorFactoryBean** vai pegar o message source e é responsável pela interpolação
 
 
+## Spring Security e JWT
+### Adicionando o módulo Security
+* Instalar:
+
+``` xml
+<dependency>
+  <groupId>org.springframework.boot</groupId>
+  <artifactId>spring-boot-starter-security</artifactId>
+</dependency>
+```
+
+* Agora, quando reiniciar a aplicação, será exibido uma senha **Using generated security password** e para fazer uma requisição vai ser necessário usar essa senha e user: user
+* **http://localhost:8080/login:** será direcionado para tela de login automaticamente
+
+
 ## Observações
 ### Atalhos IntelliJ
 * Ctrl + Alt + O: Organiza todos os importes, inclusive apaga os que não estão sendo usados
