@@ -793,9 +793,14 @@ SELECT * FROM usuario;
 
 * Aconteceu um erro de stackoverflow, sendo assim mudamos para a versão 2.9.2
 
+* http://localhost:8080/swagger-ui.html
 
 
-
+### Configurando o Security no Swagger
+* Criar um ApiKey
+* Criar defaultAuth
+* Depois disso, foi criado um botão Authorize na UI do Swagger
+  * Colocar Bearer token
 
 
 ## Observações
