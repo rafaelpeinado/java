@@ -661,6 +661,15 @@ public static void main(String[] args) {
 * **ExpiredJwtException:** se o token estiver expirado, ele vai lançar um erro
 
 
+### Implementando o Filtro do JWT
+* **AuthenticationManagerBuilder:** estávamos usando para autenticar o usuário e colocar dentro do contexto do Security e não vamos mais precisar dele, pois vamos implementar outra classe
+  * a classe é **JwtAuthFilter**
+* **UsernamePasswordAuthenticationToken:** vamos colocar dentro do contexto do Spring Security
+* **user.setDetails(new WebAuthenticationDetailsSource().buildDetails(request)):** informa que é uma autenticação web
+
+* **doFilterInternal:** está interceptando uma requisições e obtendo as informações e antes de mandar a requisição para frente, nós inserimos uma autenticação caso o token esteja válido
+
+
 ## Observações
 ### Atalhos IntelliJ
 * Ctrl + Alt + O: Organiza todos os importes, inclusive apaga os que não estão sendo usados
