@@ -680,6 +680,9 @@ public static void main(String[] args) {
 * Criado implantação a partir do TokenDTO
 
 
+### Testando o token JWT no Postman
+* Precisa inserir o header: Authorization: Bearer token-do-auth
+
 
 ## Observações
 ### Atalhos IntelliJ
