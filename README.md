@@ -721,6 +721,54 @@ CREATE TABLE item_pedido (
 ```
 
 
+### Fazendo a migração para o banco MySQL
+* A configuração inicial ficou:
+
+```
+spring.datasource.url=jdbc:mysql://localhost:3306/vendas
+spring.datasource.driverClassName=com.mysql.jdbc.Driver
+spring.datasource.username=root
+spring.datasource.password=root
+
+spring.jpa.database-platform=org.hibernate.dialect.MySQLDialect
+
+spring.jpa.properties.hibernate.show_sql=true
+spring.jpa.properties.hibernate.format_sql=true
+
+security.jwt.expiracao=30
+security.jwt.chave-assinatura=YSBsZWJyZSDDqSBicmFuY2E
+```
+
+* Após rodar a aplicação, foi necessário mudar o driver
+
+```
+spring.datasource.driverClassName=com.mysql.cj.jdbc.Driver
+```
+
+* Precisou informar o time zone
+
+```
+spring.datasource.url=jdbc:mysql://localhost:3306/vendas?userTimeZone=true&serverTimezone=UTC
+```
+
+* Ao fazer um POST do usuários, tivemos um erro de "vendas.hibernate_sequence"
+  * isso tem a ver com o strategy GenerationType para IDENTITY, porque fica a cargo do banco de gerar esses dados
+
+* Agora temos outro erro, "vendas.usuario" doesn't exist
+``` sql
+CREATE TABLE usuario (
+    id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    login VARCHAR(50) NOT NULL,
+    senha VARCHAR(255) NOT NULL,
+    admin BOOL DEFAULT FALSE
+)
+```
+
+* Verificamos se a inserção e conexão está funcionando
+``` sql
+SELECT * FROM usuario;
+```
+
 
 ## Observações
 ### Atalhos IntelliJ
