@@ -676,6 +676,11 @@ public static void main(String[] args) {
 * **addFilterBefore:** adicionamos um filtro que será executando antes de outro Filtro que é o UsernamePasswordAuthenticationFilter
 
 
+### Implementando o método de autenticação de usuários
+* Criado implantação a partir do TokenDTO
+
+
+
 ## Observações
 ### Atalhos IntelliJ
 * Ctrl + Alt + O: Organiza todos os importes, inclusive apaga os que não estão sendo usados
