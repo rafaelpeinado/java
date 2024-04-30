@@ -622,6 +622,42 @@ protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 * Ao salvar o usuário, a senha está sendo mostrada. Sendo assim, vamos criar um DTO para não retornar a senha no request
 
 
+### Testando a autenticação com cadastro de usuários
+* Mesmo que seja para permitir tudo, é muito importante cadastrar as urls no SecurityConfig
+* **.anyRequest().authenticated():** importante, pois se criarmos novas URLs, nós precisamos que pelo menos a autenticação esteja garantida em todas as URLs
+
+
+### Introdução ao JWT
+* [JSON Web Token](https://jwt.io/)
+* O JWT tem três partes
+  * **Header**
+  * **Payload:** conteúdo customizado do token
+  * **Verify Signature**
+
+* Até o momento estamos usando Basic Auth, e isso é um problema, pois estamos enviando usuário e senha, os quais podem ser interceptados
+* A biblioteca que vamos usar é a do maven io.jsonwebtoken / [jjwt](https://jwt.io/libraries)
+
+
+### Gerando o Token
+* Adicionar a dependência do JWT
+* [Base64](https://www.base64encode.org/pt/)
+* Criamos o service **JwtService**
+
+foi usado para testar rodando em formato standalone
+
+``` java
+public static void main(String[] args) {
+  ConfigurableApplicationContext contexto = SpringApplication.run(VendasApplication.class);
+  JwtService service = contexto.getBean(JwtService.class);
+  Usuario usuario = Usuario.builder().login("fulano").build();
+  String token = service.gerarToken(usuario);
+  System.out.println(token);
+}
+```
+
+
+
+
 
 ## Observações
 ### Atalhos IntelliJ
