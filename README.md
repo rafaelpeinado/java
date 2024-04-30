@@ -656,7 +656,9 @@ public static void main(String[] args) {
 ```
 
 
-
+### Decodificando o token
+* **setClaims:** para passar informações de payload e são customizáveis
+* **ExpiredJwtException:** se o token estiver expirado, ele vai lançar um erro
 
 
 ## Observações
