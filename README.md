@@ -803,6 +803,21 @@ SELECT * FROM usuario;
   * Colocar Bearer token
 
 
+### Customizando a UI da Documentação da API
+* **@Api("API Clientes"):** annotation para definir o nome da api
+* Nos métodos:
+
+``` java
+@ApiOperation("Obter detalhes de um cliente")
+@ApiResponses({
+  @ApiResponse(code = 200, message = "Cliente encontrado"),
+  @ApiResponse(code = 404, message = "Cliente não encontrado")
+})
+```
+
+
+
+
 ## Observações
 ### Atalhos IntelliJ
 * Ctrl + Alt + O: Organiza todos os importes, inclusive apaga os que não estão sendo usados
