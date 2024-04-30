@@ -670,6 +670,12 @@ public static void main(String[] args) {
 * **doFilterInternal:** está interceptando uma requisições e obtendo as informações e antes de mandar a requisição para frente, nós inserimos uma autenticação caso o token esteja válido
 
 
+### Finalizando a configuração JWT no spring security
+* Vamos remover o httpBasic e vamos usar sessionManagement, pois não vamos mais criar sessões, pois durante as requisições vamos enviar tudo o que é necessário para funcionar
+* Agora temos que enviar o token em todas as chamadas
+* **addFilterBefore:** adicionamos um filtro que será executando antes de outro Filtro que é o UsernamePasswordAuthenticationFilter
+
+
 ## Observações
 ### Atalhos IntelliJ
 * Ctrl + Alt + O: Organiza todos os importes, inclusive apaga os que não estão sendo usados
