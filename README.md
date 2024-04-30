@@ -770,11 +770,40 @@ SELECT * FROM usuario;
 ```
 
 
+## Documentação de API com SWAGGER
+### Configurando o Swagger
+* Colocamos as dependências do Swagger
+
+``` xml
+<dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>2.6.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>2.6.1</version>
+        </dependency>
+```
+
+* **Contact:** Dados de contato do desenvolvedor
+* [SwaggerConfig](./vendas/src/main/java/io/github/rafaelpeinado/config/SwaggerConfig.java)
+
+* Aconteceu um erro de stackoverflow, sendo assim mudamos para a versão 2.9.2
+
+
+
+
+
+
 ## Observações
 ### Atalhos IntelliJ
 * Ctrl + Alt + O: Organiza todos os importes, inclusive apaga os que não estão sendo usados
 * Ctrl + Alt + L: Indenta o código
 * Alt + Insert: Getter and Setter, toString, etc
-* Ctrl + F9: Build da aplciação
+* Ctrl + F9: Build da aplicação
 * Alt + Enter: sugestões para correção de erros
+* Ctrl + P: mostra os parâmetros que o método pede
 

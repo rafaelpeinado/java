@@ -24,3 +24,10 @@ CREATE TABLE item_pedido (
     produto_id INTEGER REFERENCES produto (id),
     quantidade INTEGER
 );
+
+CREATE TABLE usuario (
+    id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    login VARCHAR(50) NOT NULL,
+    senha VARCHAR(255) NOT NULL,
+    admin BOOL DEFAULT FALSE
+)
