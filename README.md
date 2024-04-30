@@ -684,6 +684,44 @@ public static void main(String[] args) {
 * Precisa inserir o header: Authorization: Bearer token-do-auth
 
 
+## Migração para o Banco MySQL
+### Conectando com o MySQL
+* Foi criado o schema
+``` sql
+CREATE DATABASE vendas;
+
+USE vendas;
+
+CREATE TABLE cliente (
+    id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(100),
+    cpf VARCHAR(11)
+);
+
+CREATE TABLE produto (
+    id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    descricao VARCHAR(100),
+    preco_unitario NUMERIC(20,2)
+);
+
+CREATE TABLE pedido (
+    id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    cliente_id INTEGER REFERENCES cliente (id),
+    data_pedido TIMESTAMP,
+    status VARCHAR(20),
+    total NUMERIC(20,2)
+);
+
+CREATE TABLE item_pedido (
+    id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    pedido_id INTEGER REFERENCES pedido (id),
+    produto_id INTEGER REFERENCES produto (id),
+    quantidade INTEGER
+);
+```
+
+
+
 ## Observações
 ### Atalhos IntelliJ
 * Ctrl + Alt + O: Organiza todos os importes, inclusive apaga os que não estão sendo usados
