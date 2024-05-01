@@ -816,6 +816,112 @@ SELECT * FROM usuario;
 ```
 
 
+## Build e Deploy
+### Gerando o JAR
+* Temos no pom.xml a tag build e por padrão exporta um arquivo JAR
+``` xml
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+        </plugin>
+    </plugins>
+</build>
+```
+
+* Precisamos abrir a linha de comando na raiz do projeto e digitar
+
+``` shell | bash
+mvn clean package
+```
+
+* E para rodar a aplicação usamos
+
+``` shell | bash
+cd target/
+java -jar ./vendas-1.0-SNAPSHOT.jar
+```
+
+
+### Gerando um Arquivo WAR
+``` xml
+<packaging>war</packaging>
+```
+
+
+* Tomcat é o servidor que roda o WAR, é um servidor embarcado que vai com a aplicação no JAR
+
+``` xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-tomcat</artifactId>
+    <scope>provided</scope>
+</dependency>
+```
+
+* o scope provided, significa que isso será provido externamente
+* Precisamos estender **extends SpringBootServletInitializer** no local do main
+
+``` shell | bash
+mvn clean package
+```
+
+* O WAR podemos usar para fazer deploy em servidores Java
+
+
+### Profiles Maven para builds diferentes
+* Vamos preparar para rodar em dev e em prod, por exemplo
+* Precisamos inserir as profiles 
+
+``` xml
+    <profiles>
+        <profile>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <id>desenvolvimento</id>
+            <properties>
+                <project.packaging>jar</project.packaging>
+                <tomcat.scope>compile</tomcat.scope>
+            </properties>
+
+        </profile>
+        <profile>
+            <id>producao</id>
+            <properties>
+                <project.packaging>war</project.packaging>
+                <tomcat.scope>provided</tomcat.scope>
+            </properties>
+        </profile>
+    </profiles>
+```
+
+* Inserir essas variáveis nas propriedades
+
+``` xml
+<packaging>${project.packaging}</packaging>
+<scope>${tomcat.scope}</scope>
+```
+
+* E rodar informando o profile desejado:
+
+``` bash | shell
+mvn clean package -P desenvolvimento
+mvn clean package -P producao
+```
+
+
+## Aulas Complementares
+### Instalando o Spring Assistant no Intellij
+* [spring initializr](https://start.spring.io/)
+* O plugin [Spring Assistant](https://plugins.jetbrains.com/plugin/17911-spring-assistant/versions/stable) faz esse mesmo processo na própria IDE
+
+
+## Aprofundando em Spring Data JPA
+### Criação do Projeto Localização
+
+
 
 
 ## Observações
