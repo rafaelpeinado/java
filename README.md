@@ -923,6 +923,13 @@ mvn clean package -P producao
 * Caso a aba Maven não apareça ir em View -> Tool Windows -> Maven
 
 
+### Mapeando a entidade Cidade
+* Caso não seja definido o @Entity, será retornado um erro informando que a classe não é uma entidade e se não colocar o @Id, terá erro de compilação no Java
+
+
+
+
+
 
 ## Observações
 ### Atalhos IntelliJ
@@ -932,4 +939,5 @@ mvn clean package -P producao
 * Ctrl + F9: Build da aplicação
 * Alt + Enter: sugestões para correção de erros
 * Ctrl + P: mostra os parâmetros que o método pede
+* Alt + Shift + Seta para cima: Mover linha de código para cima
 
