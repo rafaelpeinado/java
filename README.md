@@ -941,6 +941,15 @@ mvn clean package -P producao
 
 
 ### Utilizando Yaml no lugar de Properties nas configurações
+* O Spring Boot trabalha com os dois formatos, então não precisa mudar nada para apontar para o arquivo quando renomear
+
+
+### Query Methods com variantes de Strings
+* findByNomeStartingWith
+* findByNomeEndingWith
+* findByNomeContaining
+
+
 
 
 
