@@ -940,6 +940,8 @@ mvn clean package -P producao
 * **spring.jpa.hibernate.ddl-auto=update:** só adiciona novos campos etc
 
 
+### Utilizando Yaml no lugar de Properties nas configurações
+
 
 
 ## Observações
