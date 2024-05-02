@@ -932,6 +932,14 @@ mvn clean package -P producao
 * Quando é Long, precisa informa a letra L no final do número 12396372L
 
 
+### Automatizando scripts e logando o SQL no console
+* Temos que criar um arquivo com o nome **data.sql**
+* **spring.jpa.hibernate.ddl-auto=none:** não é para executar nenhum script automático
+* **spring.jpa.hibernate.ddl-auto=create:** vai criar as tabelas
+* **spring.jpa.hibernate.ddl-auto=drop-and-create:** dropa as tabelas antes de criar
+* **spring.jpa.hibernate.ddl-auto=update:** só adiciona novos campos etc
+
+
 
 
 ## Observações
