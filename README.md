@@ -960,8 +960,11 @@ mvn clean package -P producao
   * **?1:** significa o primeiro parâmetro informado no método
 
 
-
-
+### Queries com valores numéricos
+* findByHabitantes**LessThan**
+* findByHabitantes**GreaterThan**
+* findByHabitantes**LessThanEqual**
+* findByHabitantes**LessThanAndNomeLike**
 
 
 
