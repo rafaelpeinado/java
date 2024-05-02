@@ -1014,7 +1014,24 @@ public List<Cidade> filtroDinamico(Cidade cidade) {
 ```
 
 
+### Trabalhando com Specifications
+* Precisamos fazer um extends de JpaSpecificationExecutor
+* **O que é Specification?** É um pedaço de query, ou seja, montamos as specifications e juntamos para montar uma query
+  * o método que retornamos é um toPredicate(Root, CriteriaQuery, CriteriaBuilder)
+    * **Root:** nesse caso é a cidade
+    * **CriteriaQuery:** é a query que está sendo construída através da Specification
+    * **CriteriaBuilder:** é o objeto que constrói um criteria
 
+* A pesquisa abaixo se parece com o findByNome
+
+``` java
+public void listarCidadesByNomeSpec() {
+  Specification<Cidade> spec = CidadeSpecs.nomeEqual("São Paulo");
+  repository.findAll(spec).forEach(System.out::println);
+}
+```
+
+* A opção de Specification genérica não é muito aconselhável, pois fizemos Specification para queries específicas
 
 
 

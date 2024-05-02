@@ -8,6 +8,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+import static io.github.rafaelpeinado.localizacao.domain.repository.specs.CidadeSpecs.*;
+
 @Service
 public class CidadeService {
 
@@ -56,5 +58,19 @@ public class CidadeService {
         Example<Cidade> example = Example.of(cidade, matcher);
 
         return repository.findAll(example);
+    }
+
+    public void listarCidadesByNomeSpec() {
+//        Specification<Cidade> spec = CidadeSpecs.nomeEqual("São Paulo");
+//        repository.findAll(spec).forEach(System.out::println);
+        repository
+                .findAll(nomeEqual("São Paulo").or(habitantesGreaterThan(1000L)))
+                .forEach(System.out::println);
+    }
+
+    public void listarCidadesByGenericSpec() {
+        repository
+                .findAll(propertyEqual("nome", "São Paulo").and(propertyEqual("habitantes", 12396372L)))
+                .forEach(System.out::println);
     }
 }
