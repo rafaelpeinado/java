@@ -927,6 +927,9 @@ mvn clean package -P producao
 * Caso não seja definido o @Entity, será retornado um erro informando que a classe não é uma entidade e se não colocar o @Id, terá erro de compilação no Java
 
 
+### Testando o repositório de Cidades
+* A partir do Java 11 podemos usar a palavra reservada var
+* Quando é Long, precisa informa a letra L no final do número 12396372L
 
 
 
