@@ -967,7 +967,10 @@ mvn clean package -P producao
 * findByHabitantes**LessThanAndNomeLike**
 
 
-
+### Paginação e Ordenação de resultados
+* Coloca o parâmetro Sort e no método do service colocar Sort.by("habitantes", "nome")
+  * Funciona também em queries customizadas
+* **"%%%%"**: faz um findAll
 
 
 
