@@ -950,6 +950,23 @@ mvn clean package -P producao
 * findByNomeContaining
 
 
+### Variantes do Like
+* **findByNomeLike("%a%"):** precisa colocar %
+  * **%a%:** Containing
+  * **a%:** StartingWith
+  * **%a:** EndingWith
+* Se colocar "porto" não vamos achar nada, mas podemos tratar isso
+  * Vamos usar @Query para resolver
+  * **?1:** significa o primeiro parâmetro informado no método
+
+
+
+
+
+
+
+
+
 
 
 
