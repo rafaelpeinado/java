@@ -920,7 +920,7 @@ mvn clean package -P producao
 
 ## Aprofundando em Spring Data JPA
 ### Criação do Projeto Localização
-
+* Caso a aba Maven não apareça ir em View -> Tool Windows -> Maven
 
 
 
