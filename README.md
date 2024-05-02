@@ -973,6 +973,49 @@ mvn clean package -P producao
 * **"%%%%"**: faz um findAll
 
 
+### Queries by Example
+* o JPARepository herda da QueryByExampleExecutor
+* O Example serve para executar queries dinâmicas
+* **filtroDinamico:** no primeiro momento usamos findByHabitantesLessThanAndNomeLike e mandamos habitantes null e nome "Porto Alegre", deveríamos ter um retorno da mesma forma, mas não retorna
+  * Se fizermos testes com o if, teríamos que fazer vários cenários de teste para fazer a chamada de cada repository, por exemplo
+
+``` java
+if(cidade.getHabitantes() == null || cidade.getNome() != null) {
+  return repository.findByNome(cidade.getNome());
+}
+if(cidade.getHabitantes() != null || cidade.getNome() == null) {
+  return repository.findByHabitantes(cidade.getHabitantes());
+}
+```
+
+* Sendo assim, podemos usar o Example para fazer isso de forma dinâmica
+
+``` java
+public List<Cidade> filtroDinamico(Cidade cidade) {
+  Example<Cidade> example = Example.of(cidade);
+
+  return repository.findAll(example);
+}
+```
+
+* Após esse ajuste, ao enviar somente o nome, teremos um retorno
+* Para melhorar os resultados podemos usar outros métodos:
+
+``` java
+public List<Cidade> filtroDinamico(Cidade cidade) {
+  ExampleMatcher matcher = ExampleMatcher
+    .matching()
+    .withIgnoreCase("nome") // somente para a propriedade nome
+    .withStringMatcher(ExampleMatcher.StringMatcher.STARTING);
+  Example<Cidade> example = Example.of(cidade, matcher);
+
+  return repository.findAll(example);
+}
+```
+
+
+
+
 
 
 
