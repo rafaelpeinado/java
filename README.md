@@ -1098,6 +1098,24 @@ docker push rafaelpeinado/springdocker
   * por padrão ele protege todas as rotas e o usuário padrão é user
 
 
+### Tipos de autenticação mais comuns (Basic, Form e Bearer Token)
+* **Http Basic** (quando temos a tela JavaScript para inserir login e senha)
+  * Header Authorization: Basic (usuario+senha em base 64)
+  * [Basic Auth Header Generator](https://www.debugbear.com/basic-auth-header-generator)
+* **Form Login**
+  * passa usuário e senha e salva o login em um Cookie
+* **Bearer Token**
+  * Header Authorization: Bearer (token JWT ou token opaco)
+    * **Token Opaco:** é só um hash, uma chave para mandar no header
+    * **Token JWT:** consegue decodificar e pegar um JSON
+  * [JWT](https://jwt.io/)
+  * Comum no fluxo OAuth2
+
+
+
+
+
+
 
 ## Observações
 ### Atalhos IntelliJ
