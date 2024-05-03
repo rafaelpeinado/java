@@ -1092,8 +1092,10 @@ docker push rafaelpeinado/springdocker
 * Ver se a JDK está com a versão que deveria em **File -> Project Structure**
 
 
-
-
+### Criando as rotas e adicionando o Security no projeto
+* Criamos rotas privada e pública
+* Após inserir o starter security, tomamos unathorized por não usar a senha gerada
+  * por padrão ele protege todas as rotas e o usuário padrão é user
 
 
 
