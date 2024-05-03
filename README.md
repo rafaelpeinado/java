@@ -1034,6 +1034,10 @@ public void listarCidadesByNomeSpec() {
 * A opção de Specification genérica não é muito aconselhável, pois fizemos Specification para queries específicas
 
 
+### Montando queries dinâmicas com Specifications
+* listarCidadesSpecsFiltroDinamico
+* **conjunction** é a comparação 1 = 1 para depois fazer os appends com and
+* [JPA Criteria API Queries](https://www.objectdb.com/java/jpa/query/criteria)
 
 
 ## Observações
