@@ -1049,6 +1049,53 @@ public void listarCidadesByNomeSpec() {
   * c.id_cidade as id para que o getId do Projection possa funcionar
 
 
+## Trabalhando com Docker
+### Criando uma Imagem e rodando em Container
+* Vamos criar um arquivo JAR (o comando abaixo é o mesmo que mvn clean package)
+
+``` bash | shell
+./mvnw clean package
+```
+
+* Criar Dockerfile na pasta raiz
+* Instalar [plugin Docker](https://plugins.jetbrains.com/plugin/7724-docker)
+
+``` bash
+docker build -t rafaelpeinado/springdocker .
+```
+
+``` bash
+docker images
+```
+
+``` bash
+docker run --name springdockercontainer -p 8081:8080 rafaelpeinado/springdocker
+```
+
+
+### Montando a imagem em estágios e publicando no Dockerhub
+
+``` bash
+docker login
+```
+
+``` bash
+docker push rafaelpeinado/springdocker
+```
+
+* [Play with Docker](https://labs.play-with-docker.com/): para rodar imagens pela web
+
+
+## Criando um controle de acesso completo com Spring Security e Spring Boot 3
+### Iniciando e configurando um Projeto Spring Boot 3
+* [spring initializr](https://start.spring.io/)
+* Ver se a JDK está com a versão que deveria em **File -> Project Structure**
+
+
+
+
+
+
 
 ## Observações
 ### Atalhos IntelliJ

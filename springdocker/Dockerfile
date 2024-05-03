@@ -9,6 +9,3 @@ COPY --from=build ./build/target/*.jar ./application.jar
 EXPOSE 8080
 
 ENTRYPOINT java -jar application.jar
-
-
-
