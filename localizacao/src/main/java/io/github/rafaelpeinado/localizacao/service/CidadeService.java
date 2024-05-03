@@ -33,6 +33,15 @@ public class CidadeService {
         repository.findByNomeLike("%%%%", pageable).forEach(System.out::println);
     }
 
+    public void listarCidadesPorNomeSQL() {
+//        repository.findByNomeSqlNativo("São Paulo").forEach(System.out::println);
+        repository.findByNomeSqlNativo("São Paulo")
+                .stream()
+                .map(cidadeProjection ->
+                        new Cidade(cidadeProjection.getId(), cidadeProjection.getNome(), null))
+                .forEach(System.out::println);
+    }
+
     public void listarCidadesPorHabitantes() {
 //        cidadeRepository.findByHabitantes(78787900L).forEach(System.out::println);
         repository.findByHabitantesLessThan(1000001L).forEach(System.out::println);

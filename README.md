@@ -1040,6 +1040,16 @@ public void listarCidadesByNomeSpec() {
 * [JPA Criteria API Queries](https://www.objectdb.com/java/jpa/query/criteria)
 
 
+### Criando Queries com SQL nativo e Projections
+* **@Query(nativeQuery = true)**
+* **@Query(nativeQuery = true, value = "select * from tb_cidade as c where c.nome = :nome")**
+* **@Query(nativeQuery = true, value = "select c.nome from tb_cidade as c where c.nome = :nome"):** traz só o nome da cidade
+
+* Usamos **Projections** quando queremos trazer apenas os campos id e nome, por exemplo, mas a entidade Cidade tem qtd_habitantes, ou até mesmo fazer join com outras tabelas
+  * c.id_cidade as id para que o getId do Projection possa funcionar
+
+
+
 ## Observações
 ### Atalhos IntelliJ
 * Ctrl + Alt + O: Organiza todos os importes, inclusive apaga os que não estão sendo usados
@@ -1049,4 +1059,5 @@ public void listarCidadesByNomeSpec() {
 * Alt + Enter: sugestões para correção de erros
 * Ctrl + P: mostra os parâmetros que o método pede
 * Alt + Shift + Seta para cima: Mover linha de código para cima
+* Ctrl + Shift + N: para procurar arquivo
 
