@@ -1155,6 +1155,9 @@ public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Excepti
   * Caso o authenticate retorne null ou **AuthenticationException**, o Authentication não será provido para o contexto
 
 
+### Autenticação via Filtro
+* Se não fizer o FilterChain seguir com **filterChain.doFilter(request, response)**, a consequência será de não receber quem foi autenticado e além de tudo, todas as requisições terão acesso
+
 
 
 ## Observações
