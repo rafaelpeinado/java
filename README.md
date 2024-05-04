@@ -1146,6 +1146,8 @@ public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Excepti
 * Client -> **Request** -> Security Filter Chain -> **Autentication** -> API -> **Response** -> Client
 
 
+### Entendendo o Authentication
+* Vamos injetar o Authentication no método que queremos usar a autenticação
 
 
 
