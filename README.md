@@ -1142,7 +1142,8 @@ public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Excepti
 * Ainda estamos usando httpBasic
 
 
-
+### Como funciona o processo de autenticação no security filter chain
+* Client -> **Request** -> Security Filter Chain -> **Autentication** -> API -> **Response** -> Client
 
 
 
