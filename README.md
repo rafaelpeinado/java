@@ -1112,7 +1112,29 @@ docker push rafaelpeinado/springdocker
   * Comum no fluxo OAuth2
 
 
+### Configuração básica do Spring Security
+* As annotations **@Configuration** e **@EnableWebSecurity** habilitam a classe a fazer configuração do Spring Security
+* Na versão do Java 17, não precisamos mais fazer extends da classe **WebSecurityConfigurerAdapter**
+* Só podemos chamar o **customizer.anyRequest().authenticated()** por último
+* Quando criamos o **SecurityFilterChain**, não conseguimos mais acessar as URLs, pois não configuramos uma forma de autenticação
+  * para isso, inserimos **.httpBasic(Customizer.withDefaults())**
+    * é o mesmo que .httpBasic(customizer -> {})
+  * e para criar o form de login, usamos **.formLogin(Customizer.withDefaults())**
 
+
+``` java
+@Bean
+public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    return http
+            .authorizeHttpRequests(customizer -> {
+                customizer.requestMatchers("/public").permitAll();
+                customizer.anyRequest().authenticated();
+            })
+            .httpBasic(Customizer.withDefaults())
+            .formLogin(Customizer.withDefaults())
+            .build();
+}
+```
 
 
 
