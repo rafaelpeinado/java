@@ -1150,6 +1150,12 @@ public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Excepti
 * Vamos injetar o Authentication no método que queremos usar a autenticação
 
 
+### Utilizando um Authentication Provider
+* Para customizar precisamos estender a classe **AuthenticationProvider**
+  * Caso o authenticate retorne null ou **AuthenticationException**, o Authentication não será provido para o contexto
+
+
+
 
 ## Observações
 ### Atalhos IntelliJ
