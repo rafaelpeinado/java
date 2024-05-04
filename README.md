@@ -1137,6 +1137,15 @@ public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Excepti
 ```
 
 
+### Configurando credenciais de acesso
+* Configuranção semelhantes ao feito em vendas
+* Ainda estamos usando httpBasic
+
+
+
+
+
+
 
 
 ## Observações
