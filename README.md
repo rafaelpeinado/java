@@ -1183,6 +1183,11 @@ public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Excepti
 * **.csrf(AbstractHttpConfigurer::disable):** como estamos trabalhando com API, precisamos desabilitar. O CSFR é para usar em aplicações Web.
 
 
+### Cadastrando Usuários com suas permissões
+* Falta criptografar as senhas dos usuários
+
+
+
 
 
 ## Observações
