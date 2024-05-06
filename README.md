@@ -1159,6 +1159,15 @@ public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Excepti
 * Se não fizer o FilterChain seguir com **filterChain.doFilter(request, response)**, a consequência será de não receber quem foi autenticado e além de tudo, todas as requisições terão acesso
 
 
+### Configurando autorização baseada em Roles e Authorities
+* Role: grupo de usuário (perfil de usuário) -> Master, Gerente, Frente de Loja, Vendedor
+* Authotiry: permissões -> cadastrar usuário, acessar tela de relatório
+
+* Role é uma combinação de authorities
+
+* Por padrão, o Spring Boot exige que coloque um prefixo "ROLE_"
+  * nós podemos mudar esse prefixo no Security com GrantedAuthorityDefaults
+
 
 ## Observações
 ### Atalhos IntelliJ
