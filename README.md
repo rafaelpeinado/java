@@ -1169,6 +1169,17 @@ public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Excepti
   * nós podemos mudar esse prefixo no Security com GrantedAuthorityDefaults
 
 
+### Definindo as permissões de acesso via controllers
+* Podemos usar essa configuração para não ficar definindo tudo no SecurityConfig, pois com muitas urls, pode ficar confuso
+* **@EnableMethodSecurity(securedEnabled = true):** annotation para poder configurar nos controllers
+* **@PreAuthorize("hasRole('ADMIN')"):** annotation nos controllers para definir a role
+
+
+
+
+
+
+
 ## Observações
 ### Atalhos IntelliJ
 * Ctrl + Alt + O: Organiza todos os importes, inclusive apaga os que não estão sendo usados
