@@ -1175,7 +1175,8 @@ public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Excepti
 * **@PreAuthorize("hasRole('ADMIN')"):** annotation nos controllers para definir a role
 
 
-
+### Criando o domínio para o desenvolvimento de um controle de acesso
+* Apenas criando entidades para controle de acesso
 
 
 
