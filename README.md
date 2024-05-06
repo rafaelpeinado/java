@@ -1179,6 +1179,10 @@ public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Excepti
 * Apenas criando entidades para controle de acesso
 
 
+### Cadastrando Grupos de Usuário
+* **.csrf(AbstractHttpConfigurer::disable):** como estamos trabalhando com API, precisamos desabilitar. O CSFR é para usar em aplicações Web.
+
+
 
 
 ## Observações
