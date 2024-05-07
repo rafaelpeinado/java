@@ -1212,6 +1212,10 @@ public boolean isAuthenticated() {
 * **@Transient:** utiliza para ignorar o mapeamento JPA
 
 
+### Integrando a base de usuários com o Spring Security
+* A ordem dos .authenticationProvider é bem importante, pois o Security só vai passar no customAuthenticationProvider, caso não tenha um senhaMasterAuthenticationProvider e caso não encontre nada, vai no addFilterBefore.
+
+
 
 
 
