@@ -7,6 +7,7 @@ import io.github.rafaelpeinado.sbootexpsecurity.domain.repository.GrupoRepositor
 import io.github.rafaelpeinado.sbootexpsecurity.domain.repository.UsuarioGrupoRepository;
 import io.github.rafaelpeinado.sbootexpsecurity.domain.repository.UsuarioRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -20,10 +21,15 @@ public class UsuarioService {
     private final UsuarioRepository repository;
     private final GrupoRepository grupoRepository;
     private final UsuarioGrupoRepository usuarioGrupoRepository;
+    private final PasswordEncoder passwordEncoder;
 
     @Transactional
     public Usuario salvar(Usuario usuario, List<String> grupos) {
+        String senhaCriptografada = usuario.getSenha();
+        usuario.setSenha(senhaCriptografada);
+        passwordEncoder.encode(senhaCriptografada);
         repository.save(usuario);
+
         List<UsuarioGrupo> listaUsuarioGrupo = grupos.stream().map(nomeGrupo -> {
                     Optional<Grupo> possivelGrupo = grupoRepository.findByNome(nomeGrupo);
                     if (possivelGrupo.isPresent()) {

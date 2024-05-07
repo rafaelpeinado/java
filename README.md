@@ -1187,6 +1187,27 @@ public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Excepti
 * Falta criptografar as senhas dos usuários
 
 
+### Criptografando a senha e testando o fluxo de cadastro de usuário e permissões
+* Foi criado o CustomAuthentication
+* Não queremos expor as credenciais dos usuários
+
+``` java
+@Override
+public Object getCredentials() {
+    return null;
+}
+```
+
+* isAuthenticated sempre tem que ser true
+``` java
+@Override
+public boolean isAuthenticated() {
+    return true;
+}
+```
+
+
+
 
 
 
