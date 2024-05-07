@@ -1207,6 +1207,10 @@ public boolean isAuthenticated() {
 ```
 
 
+### Criando a lógica do AuthenticationProvider para uso no controle de acesso
+* 3 aspas serve para evitar fazer concatenação de strings
+* **@Transient:** utiliza para ignorar o mapeamento JPA
+
 
 
 
