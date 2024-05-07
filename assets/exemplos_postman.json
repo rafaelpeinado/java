@@ -1,0 +1,332 @@
+{
+	"info": {
+		"_postman_id": "fb1f6a9a-138d-4b39-b2dd-a452e65db445",
+		"name": "Sboot Expert",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13910576"
+	},
+	"item": [
+		{
+			"name": "Security",
+			"item": [
+				{
+					"name": "public",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic dXNlcjpjNjRlN2I2MC1mOTg1LTRiYjAtYTZkMy0wZDFhOWM0ZmJhMmI=",
+								"uuid": "0400d693-9b0e-424d-8d85-53e270785fd0",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/public",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"public"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "private",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-secret",
+								"value": "secr3t",
+								"uuid": "ed4f0148-89c2-4d05-99b4-7bfaa8c7080e"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/private",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"private"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admin",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "@321",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "master",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-secret",
+								"value": "secr3t",
+								"uuid": "faf21193-5527-4acb-b3cd-e5e2b94189a7"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cadastrar grupo usuário",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "@321",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "master",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-secret",
+								"value": "secr3t",
+								"uuid": "f23daa48-b54e-4290-9d36-3e0cecf97a5b"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"GERENTE_RH\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/grupos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"grupos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cadastrar usuario",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "@321",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "master",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-secret",
+								"value": "secr3t",
+								"uuid": "a7964229-c0fa-433b-aee3-d93f6c16637b"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"usuario\": {\r\n        \"nome\": \"gerente\",\r\n        \"login\": \"gerente\",\r\n        \"senha\": \"123\"\r\n    },\r\n    \"permissoes\": [\r\n        \"GERENTE_RH\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listar grupos de usuários",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "@321",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "master",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-secret",
+								"value": "secr3t",
+								"uuid": "375c13a7-61da-42d6-9e47-1fdd3b7562aa"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"TECNICO_RH\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/grupos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"grupos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Tecnico RH",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "tecnico",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/rh/tecnico",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"rh",
+								"tecnico"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gerente RH",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "tecnico",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/rh/gerente",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"rh",
+								"gerente"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

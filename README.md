@@ -1222,6 +1222,8 @@ public boolean isAuthenticated() {
 
 
 ## Observações
+* [Arquivo Postman](./assets/exemplos_postman.json)
+
 ### Atalhos IntelliJ
 * Ctrl + Alt + O: Organiza todos os importes, inclusive apaga os que não estão sendo usados
 * Ctrl + Alt + L: Indenta o código
