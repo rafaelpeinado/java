@@ -1216,7 +1216,9 @@ public boolean isAuthenticated() {
 * A ordem dos .authenticationProvider é bem importante, pois o Security só vai passar no customAuthenticationProvider, caso não tenha um senhaMasterAuthenticationProvider e caso não encontre nada, vai no addFilterBefore.
 
 
-
+### Finalizando Controle de Acesso e Testando tudo
+* Fiz um ajuste em UsuarioService na criptografia da senha
+* Estamos usando o mesmo objeto de autenticação para todas as partes do sistema
 
 
 ## Observações

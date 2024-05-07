@@ -25,9 +25,9 @@ public class UsuarioService {
 
     @Transactional
     public Usuario salvar(Usuario usuario, List<String> grupos) {
-        String senhaCriptografada = usuario.getSenha();
+        String senha = usuario.getSenha();
+        String senhaCriptografada = passwordEncoder.encode(senha);
         usuario.setSenha(senhaCriptografada);
-        passwordEncoder.encode(senhaCriptografada);
         repository.save(usuario);
 
         List<UsuarioGrupo> listaUsuarioGrupo = grupos.stream().map(nomeGrupo -> {
