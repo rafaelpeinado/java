@@ -60,6 +60,28 @@ assertEquals(
 * O problema foi na Classe ClinicCalendar, pois não tinha a chamada do toUpperCase(), para transformar o AM ou PM em maiúsculo, pois o java só entende AM ou PM maiúsculo
 
 
+## Writing More Complex Tests
+### Demo: Applying Assertions
+* [Class Assertions](https://junit.org/junit5/docs/5.0.1/api/org/junit/jupiter/api/Assertions.html)
+
+* **assertSame:** irá verificar se as duas variáveis que estão sendo comparadas apontam literalmente para o mesmo objeto na memória. As Instâncias de Enum são únicas, então a comparação não devem ser somente equivalentes, elas devem ser exatamente o mesmo objeto na memória.
+
+
+* o meu teste **returnCurrentDaysAppointments**, falhou, porque não estou na data do dia do curso.
+
+``` java
+assertEquals(calendar.getTodayAppointments(), calendar.getAppointments());
+```
+
+* O teste acima também falhou, pois o item actual tem um item a mais. E o que é mostrado são instâncias de objetos. Se usarmos **assertEquals** para comparar coleções, o JUnit verificará se as duas coleções contêm objetos equivalentes usando o método equals em cada um desses objetos e se esses objetos estão na mesma ordem.
+
+
+* **assertIterableEquals:** um iterable no Java é algo que retorna uma série de objetos para uso em loop for. Se estamos tentando comparar o conteúdo de coleções que são tipos diferentes de coleção, se podemos obter um iterable de ambos, podemos usar assertIterableEquals para compará-los.
+
+
+
+
+
 ## Observações
 * [JUnit 5](https://junit.org/junit5/)
 
