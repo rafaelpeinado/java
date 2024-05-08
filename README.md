@@ -104,6 +104,11 @@ assertEquals(calendar.getTodayAppointments(), calendar.getAppointments());
   * After all...
 
 
+### Demo: Testing Exceptions
+* **assertThrows:** podemos usar para verificar explicitamente que recebemos uma exceção quando determinado código é chamado. O que esperamos de volta é uma exceção de Runtime
+
+
+
 
 ## Observações
 * [JUnit 5](https://junit.org/junit5/)
