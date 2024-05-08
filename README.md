@@ -46,7 +46,18 @@ mvn clean test
 
 
 ### Demo: Executing Your Test and Interpreting Results
+* Podemos tornar o nível de pacote do método de teste em vez de public, pois o teste e a classe que estamos testando estão no mesmo pacote Java 
 
+* No primeiro momento, foi difícil testar o 
+
+``` java
+assertEquals(
+        "9/1/2018 02:00 PM",
+        enteredAppt.getAppointmentDateTime()
+                .format(DateTimeFormatter.ofPattern("M/d/yyyy hh:mm a")));
+```
+
+* O problema foi na Classe ClinicCalendar, pois não tinha a chamada do toUpperCase(), para transformar o AM ou PM em maiúsculo, pois o java só entende AM ou PM maiúsculo
 
 
 ## Observações

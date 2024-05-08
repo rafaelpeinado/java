@@ -3,6 +3,7 @@ package patientintake;
 
 import org.junit.jupiter.api.Test;
 
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -10,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class ClinicCalendarShould {
 
     @Test
-    public void allowEntryOfAnAppoitment() {
+    void allowEntryOfAnAppoitment() {
         // Configuração
         ClinicCalendar calendar = new ClinicCalendar();
 
@@ -22,6 +23,15 @@ class ClinicCalendarShould {
         // Verificação
         assertNotNull(appointments);
         assertEquals(1, appointments.size());
+
+        PatientAppointment enteredAppt = appointments.get(0);
+        assertEquals("Jim", enteredAppt.getPatientFirstName());
+        assertEquals("Weaver", enteredAppt.getPatientLastName());
+        assertEquals(Doctor.avery, enteredAppt.getDoctor());
+        assertEquals(
+                "9/1/2018 02:00 PM",
+                enteredAppt.getAppointmentDateTime()
+                        .format(DateTimeFormatter.ofPattern("M/d/yyyy hh:mm a")));
     }
 
 }
