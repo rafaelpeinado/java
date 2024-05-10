@@ -116,6 +116,26 @@ assertEquals(calendar.getTodayAppointments(), calendar.getAppointments());
 * no JUnit 5 é possível criar testes aninhados usando uma nova classe com a annotation **@Nested**
 
 
+### Demo: Controlling Test Method Execution
+* Uma coisa bastante comum a ser feita é desativar um teste temporariamente. Pode haver alguma falha no teste que gostaríamos de resolver mais tarde e não apagá-lo
+* O importante da annotation **@Disabled**, é que ele mostra a existência do código para não deixar esquecê-lo e ainda o apresenta no relatório.
+* Podemos usar **assertAll** para validar todos os asserts que foram criado dentro daquele método.
+  * A importante desse método é que ele vai testar todos os asserts e apresentar todas as falhas que encontrar
+
+``` java
+assertAll(
+        () -> assertEquals("Jim", enteredAppt.getPatientFirstName()),
+        () -> assertEquals("Weaver", enteredAppt.getPatientLastName()),
+        () -> assertSame(Doctor.avery, enteredAppt.getDoctor()),
+        () -> assertEquals(
+                "9/1/2018 02:00 PM",
+                enteredAppt.getAppointmentDateTime()
+                        .format(DateTimeFormatter.ofPattern("M/d/yyyy hh:mm a"))),
+);
+```
+
+
+
 
 ## Observações
 * [JUnit 5](https://junit.org/junit5/)

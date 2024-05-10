@@ -25,6 +25,7 @@ class ClinicCalendarShould {
     }
 
     @Test
+        // @Disabled
     void allowEntryOfAnAppoitment() {
         System.out.println("entry of appointment...");
         // Execução
@@ -37,14 +38,40 @@ class ClinicCalendarShould {
         assertEquals(1, appointments.size());
 
         PatientAppointment enteredAppt = appointments.get(0);
-        assertEquals("Jim", enteredAppt.getPatientFirstName());
-        assertEquals("Weaver", enteredAppt.getPatientLastName());
-        assertSame(Doctor.avery, enteredAppt.getDoctor());
-        assertEquals(
-                "9/1/2018 02:00 PM",
-                enteredAppt.getAppointmentDateTime()
-                        .format(DateTimeFormatter.ofPattern("M/d/yyyy hh:mm a")));
+        assertAll(
+                () -> assertEquals("Jim", enteredAppt.getPatientFirstName()),
+                () -> assertEquals("Weaver", enteredAppt.getPatientLastName()),
+                () -> assertSame(Doctor.avery, enteredAppt.getDoctor()),
+                () -> assertEquals(
+                        "9/1/2018 02:00 PM",
+                        enteredAppt.getAppointmentDateTime()
+                                .format(DateTimeFormatter.ofPattern("M/d/yyyy hh:mm a")))
+        );
     }
+
+//    @Test
+//    void allowEntryOfAnAppoitment() {
+//        System.out.println("entry of appointment...");
+//        // Execução
+//        calendar.addAppointment(
+//                "Jim", "Weaver", "avery", "09/01/2018 2:00 pm");
+//        List<PatientAppointment> appointments = calendar.getAppointments();
+//
+//        // Verificação
+//        assertNotNull(appointments);
+//        assertEquals(1, appointments.size());
+//
+//        PatientAppointment enteredAppt = appointments.get(0);
+//        assertAll(
+//                () -> assertEquals("Jims", enteredAppt.getPatientFirstName()),
+//                () -> assertEquals("Weavers", enteredAppt.getPatientLastName()),
+//                () -> assertSame(Doctor.avery, enteredAppt.getDoctor()),
+//                () -> assertEquals(
+//                        "9/1/2018 02:00 PM",
+//                        enteredAppt.getAppointmentDateTime()
+//                                .format(DateTimeFormatter.ofPattern("M/d/yyyy hh:mm a")))
+//        );
+//    }
 
     @Test
     void returnTrueForHasAppointmentsIfThereAreAppointments() {
