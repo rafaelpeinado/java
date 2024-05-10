@@ -105,8 +105,15 @@ assertEquals(calendar.getTodayAppointments(), calendar.getAppointments());
 
 
 ### Demo: Testing Exceptions
-* **assertThrows:** podemos usar para verificar explicitamente que recebemos uma exceção quando determinado código é chamado. O que esperamos de volta é uma exceção de Runtime
+* **assertThrows:** podemos usar para verificar explicitamente que recebemos uma exceção quando determinado código é chamado. O que esperamos de volta é uma exceção de Runtime.
 
+
+### Demo: Customizing Test Messages and Reporting
+* Todos asserts permitem colocar um terceiro parâmetro que é a mensagem de erro que queremos que apareça.
+* **@DisplayName("DateTimeConverter should"):** nome que será exibido quando o teste for executado
+* Usar strings nas mensagens de erro podem deixar um pouco de atraso, pois serão concebidas pelo JUnit. Podemos usar a sintaxe da expressão lambda, uma função anônima, para fornecer a mensagem de falha em vez de apenas um string fixa como o parâmetro
+  * A expressão lambda só será avaliada se houver uma falha
+* no JUnit 5 é possível criar testes aninhados usando uma nova classe com a annotation **@Nested**
 
 
 
