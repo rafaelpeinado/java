@@ -140,6 +140,28 @@ assertAll(
   * Colocando no método, apenas aquele método foi executado.
 
 
+## Making Existing Code Testable
+### Understanding Single Responsibility
+* Princípio da Responsabilidade Única, por Bob Martin, é a ideia de que uma unidade de código deve fazer uma coisa e fazer isso bem.
+* Coesão e separação de conceitos
+* Deve ter apenas um motivo para mudar
+
+#### Finding a Seam to Test Target Code
+* Fornecer inputs (entradas) para o código alvo
+* Validar outputs (saídas) do código alvo
+* Verificar se código alvo cumpre suas responsabilidade única 
+
+#### Mixed Concerns Makes Code Hard to Test
+* **Inaccessible system output:** o código pode estar enviando essas saídas diretamente para um relatório ou para uma interface de usuário, sem chance de um teste as interceptar
+* **Inaccessible inputs:** podemos não conseguir fornecer entradas para o código que está tentando testar. Código de interface do usuário misto com lógica de negócios é um exemplo clássico disso. O código que obtém diretamente as entradas de um usuário geralmente não fornece uma maneira de fornecer essas entradas programaticamente, o que precisamos ser capaz de fazer em um teste unitário.
+* **Undesirable side effects:** podemos ter efeitos colaterais indesejáveis. A lógica que gostaríamos de testar é mesclada com o código de acesso ao banco de dados, por exemplo, pode gerar uma exceção se o banco de dados não estiver disponível ou, mesmo se estiver disponível, pode atrasar o teste. 
+
+#### Extraction - Separate Code to Test
+* Então, se estamos tentando testar o código com problemas mistos? Podemos usar uma técnica chamada **Extraction**:
+  * separar os conceitos movendo o código, tentando separar o código que queremos testar dos outros códigos
+  * essa extração pode assumir várias formas, como ser movido para novos métodos, classes e funções.
+  * as extrações mais fáceis e seguras são aquelas que são de natureza tão mecânica que a IDE pode realizá-las para nós quando isso for possível.
+
 
 
 ## Observações
