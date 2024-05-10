@@ -2,6 +2,7 @@ package patientintake;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
@@ -9,6 +10,7 @@ import java.time.LocalDateTime;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+// @Tag("dateTime")
 @DisplayName("DateTimeConverter should")
 class DateTimeConverterShould {
 
@@ -66,6 +68,7 @@ class DateTimeConverterShould {
     }
 
     @Test
+    // @Tag("dateTime")
     @DisplayName("throw exception if entered pattern of string incorrect")
     void throwExceptionIfIncorrectPatternProvided() {
         Throwable error = assertThrows(RuntimeException.class, () -> DateTimeConverter

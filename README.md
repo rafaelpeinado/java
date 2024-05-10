@@ -135,6 +135,11 @@ assertAll(
 ```
 
 
+### Demo: Running Groups of Tests
+* Ao colocar a annotation **@Tag("dateTime")** na classe DateTimeConverterShould e configurar no JUnit para rodar todos os testes com a tag dateTime, apenas a classe DateTimeConverterShould foi executada, ignorando as outras
+  * Colocando no método, apenas aquele método foi executado.
+
+
 
 
 ## Observações
