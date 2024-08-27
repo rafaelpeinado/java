@@ -1,2 +1,13 @@
-# java
-Repositório que concentra vários projetos de cursos em Java. Os cursos foram separados por curso em cada branch. Ou pode clicar nos links abaixo que direcionam para a branch.
+# Java Intermediário
+## Enumeradores (Enum)
+### Enumeradores (Enum)
+- Enumeradores são constantes, com funções extras
+- Para declarar contantes, precisamos declarar com o modificador **final**, para ser contante e não poder mudar
+- quando for public static, não precisaremos instanciar DiaSemanaContantes
+
+#### Enum no Java
+
+
+
+
+
