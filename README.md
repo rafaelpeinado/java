@@ -94,5 +94,8 @@
 - Apostilas kl9
 
 
-
+## Instalando o Java no Windows
+- **JDK (Java Development Kit):** é necessário para desenvolver. Já está incluso o JRE
+- **JRE (Java Runtime Environment):** programa para executar um programa Java no computador
+  - O Programa de Imposto de Renda usa o JRE
 
