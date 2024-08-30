@@ -99,3 +99,50 @@
 - **JRE (Java Runtime Environment):** programa para executar um programa Java no computador
   - O Programa de Imposto de Renda usa o JRE
 
+
+## Começando com Java
+### Entendendo os Erros
+#### Tipos de Erros
+- Erros de Sintaxe
+- Erros de Semântica
+- Erros em Tempo de Execução
+
+
+### Introdução a Classes e Objetos
+* Paradigmas Estruturas x Orientado a Objetos
+
+
+#### Vantages OO
+- Reuso de código
+- Reflete o mundo real
+- Facilita manutenção no código
+
+
+#### Conceitos
+- **Classes:** descrição de um grupo de objetos
+  - Nome da classe
+  - Conjunto de atributos (descrição)
+  - Conjunto de métodos (comportamento)
+- **Objetos**
+- **Herança**
+  - Permite reutilização da estrutura e do comportamento de uma classe
+- **Polimorfismo** (é mais voltado para comportamentos)
+  - Habilidade de variáveis terem "mais de um tipo"
+
+
+##### Emitir som
+- Cachorro: late
+- Gato: mia
+- Vaca: berra
+- Cobra: sibila
+- Lobo: ruiva
+
+
+#### Java: pacotes
+- Forma de organizar as classes
+- Convenção: domínio + ´projeto + pasta
+- Ex: com.loiane.cursojava.aula09
+
+
+
+
