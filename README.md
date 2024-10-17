@@ -279,3 +279,14 @@ Oct31 == Dec25 resulta em true
 |       \uxxxx        | constante hexadecimal |
 
 
+### lendo dados usando a classe Scanner
+- Classe Scanner
+  - Scanner scan = new Scanner(System.in);
+  - String nome = scan.nextLine();
+  - String primeiroNome = scanNext();
+  - int idade = scan.nextInt();
+  - double altura = scan.nextDouble();
+
+
+
+
