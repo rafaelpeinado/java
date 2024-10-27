@@ -70,6 +70,14 @@
   - Undefined
 
 
+### Tudo em português
+- Definir "# language: pt"
+
+
+
+
+
+
 
 ## Observações e Recomendações
 - Specification by Example - Gojko Adzic
