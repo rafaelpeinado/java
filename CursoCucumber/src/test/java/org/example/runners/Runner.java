@@ -12,7 +12,8 @@ import org.junit.runner.RunWith;
         // dryRun = false,
         // strict = true,
         features = "src/test/java/resources/features",
-        glue = "org.example.steps"
+        glue = "org.example.steps",
+        tags = "@esse"
 )
 public class Runner {
 

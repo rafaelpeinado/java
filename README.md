@@ -134,6 +134,21 @@
   - glue: define o caminho dos steps
 
 
+### Tags
+- Define um tag no features com @esse, por exemplo
+- No @CucumberOptions
+  - tags = "@esse"
+
+- Para negação
+  - por exemplo, tag @ignore
+  - e no @CucumberOptions, tags = "~@ignore"
+
+- Aplicar mais de uma tag
+  - @tipo1 @tipo2
+  - tags = {"@tipo1", "@tipo2"} (nesse caso é E)
+  - tags = {"@tipo1, @tipo2"} (nesse caso é OU)
+
+
 
 ## Observações e Recomendações
 - Specification by Example - Gojko Adzic
