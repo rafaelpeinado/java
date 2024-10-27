@@ -4,6 +4,11 @@ import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Então;
 import io.cucumber.java.pt.Quando;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 import static org.junit.Assert.assertEquals;
 
 public class AprenderCucumber {
@@ -24,6 +29,7 @@ public class AprenderCucumber {
 
 
     private int contador = 0;
+
     @Dado("que o valor do contador é {int}")
     public void queOValorDoContadorÉ(int value) {
         contador = value;
@@ -37,6 +43,45 @@ public class AprenderCucumber {
     @Então("o valor do contador será {int}")
     public void oValorDoContadorSerá(int value) {
         assertEquals(value, contador);
+    }
+
+
+    Date entrega = new Date();
+
+    @Dado("que a entrega é dia {int}\\/{int}\\/{int}")
+    public void queAEntregaÉDia(int dia, int mes, int ano) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.DAY_OF_MONTH, dia);
+        calendar.set(Calendar.MONTH, mes - 1);
+        calendar.set(Calendar.YEAR, ano);
+        entrega = calendar.getTime();
+    }
+
+    @Quando("a entrega atrasar em {int} {string}")
+    public void aEntregaAtrasarEmDias(int qtde, String tempo) throws Exception {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(entrega);
+        switch (tempo) {
+            case "dias":
+            case "dia":
+                calendar.add(Calendar.DAY_OF_MONTH, qtde);
+                break;
+            case "meses":
+            case "mes":
+                calendar.add(Calendar.MONTH, qtde);
+                break;
+            default:
+                throw new Exception("Tempo inválido");
+        }
+        entrega = calendar.getTime();
+    }
+
+    @Então("a entrega será efetuada em {string}")
+    public void aEntregaSeráEfetuadaEm(String data) {
+        DateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+        String dataFormatada = format.format(entrega);
+
+        assertEquals(data, dataFormatada);
     }
 }
 

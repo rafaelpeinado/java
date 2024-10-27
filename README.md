@@ -103,6 +103,10 @@
 - É necessário o Assert para validar o dado
 
 
+### Reaproveitando cenários - REGEX
+- Ao retirar {int} os próximos cenários não serão reaproveitados
+- [Regulex](https://jex.im/regulex)
+- [Regex 101](https://regex101.com/)
 
 
 ## Observações e Recomendações
