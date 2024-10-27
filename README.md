@@ -113,8 +113,15 @@
 - Usando regex para definir como o texto deve ser redigido
 
 
+### Transform
+- Nas versões atuais não são mais usadas a annotation @Transform
 
 
+### Melhorando fluidez dos cenários
+- Dado
+  - E: para acrescentar mais itens
+  - Mas: para negar um item
+- *: genérico para qualquer tipo
 
 
 
