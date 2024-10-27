@@ -95,6 +95,13 @@
 - strict = true
 
 
+### Cenário: Contador
+- Criação dos cenários com contador
+
+
+
+
+
 
 
 ## Observações e Recomendações
