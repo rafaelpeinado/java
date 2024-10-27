@@ -11,7 +11,7 @@ import java.util.Date;
 
 import static org.junit.Assert.assertEquals;
 
-public class AprenderCucumber {
+public class AprenderCucumberSteps {
     @Dado("que criei o arquivo corretamente")
     public void que_criei_o_arquivo_corretamente() {
         System.out.println("passou aqui");

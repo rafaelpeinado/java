@@ -124,6 +124,16 @@
 - *: genérico para qualquer tipo
 
 
+### Organizando a casa
+- features: dentro de resources/features
+- Runners: org.example.runners
+- Steps (classes que definem os passos): org.example.steps
+
+- @CucumberOptions
+  - features: define o caminho das features
+  - glue: define o caminho dos steps
+
+
 
 ## Observações e Recomendações
 - Specification by Example - Gojko Adzic
