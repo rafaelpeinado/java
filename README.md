@@ -74,7 +74,25 @@
 - Definir "# language: pt"
 
 
+### Integrando com JUnit
 
+```xml
+<dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-junit</artifactId>
+    <version>7.20.1</version>
+    <scope>test</scope>
+</dependency>
+```
+
+- Classe Runner
+  - @RunWith(Cucumber.class)
+
+
+### CucumberOptions
+- snippets = CucumberOptions.SnippetType.CAMELCASE: ao invés de que_criei_o_arquivo_corretamente, será queCrieiOArquivoCorretamente
+- dryRun = true
+- strict = true
 
 
 
