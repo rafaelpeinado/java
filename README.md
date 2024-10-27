@@ -109,6 +109,15 @@
 - [Regex 101](https://regex101.com/)
 
 
+### Desafio: REGEX
+- Usando regex para definir como o texto deve ser redigido
+
+
+
+
+
+
+
 ## Observações e Recomendações
 - Specification by Example - Gojko Adzic
 - User Stories Applied for Agile Software Development - Mike Cohn
