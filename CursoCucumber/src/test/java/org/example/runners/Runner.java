@@ -11,9 +11,9 @@ import org.junit.runner.RunWith;
         snippets = CucumberOptions.SnippetType.CAMELCASE,
         // dryRun = false,
         // strict = true,
-        features = "src/test/java/resources/features",
-        glue = "org.example.steps",
-        tags = "@esse"
+        features = "src/test/java/resources/features/alugar_filmes.feature",
+        glue = "org.example.steps"
+        // tags = "@esse"
 )
 public class Runner {
 
