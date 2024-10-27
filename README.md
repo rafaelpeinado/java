@@ -51,6 +51,25 @@
 - Plugin Cucumber
 
 
+### Cenário inicial
+- [aprender_cucumber.feature](./CursoCucumber/src/test/java/aprender_cucumber.feature)
+  - Os arquivos feature, centralizam toda a especificação de determinada funcionalidade
+  - É uma fonte única de verdade
+- Given
+- When
+- Then
+
+- Os passos dos cenários precisam ser associados a algum método
+  - [AprenderCucumber.java](./CursoCucumber/src/test/java/AprenderCucumber.java)
+
+- Status dos testes
+  - Passed
+  - Failed
+  - Skipped
+  - Pending
+  - Undefined
+
+
 
 ## Observações e Recomendações
 - Specification by Example - Gojko Adzic
