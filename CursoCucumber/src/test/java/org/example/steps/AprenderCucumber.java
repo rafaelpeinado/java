@@ -4,6 +4,8 @@ import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Então;
 import io.cucumber.java.pt.Quando;
 
+import static org.junit.Assert.assertEquals;
+
 public class AprenderCucumber {
     @Dado("que criei o arquivo corretamente")
     public void que_criei_o_arquivo_corretamente() {
@@ -23,18 +25,18 @@ public class AprenderCucumber {
 
     private int contador = 0;
     @Dado("que o valor do contador é {int}")
-    public void queOValorDoContadorÉ(Integer value) {
+    public void queOValorDoContadorÉ(int value) {
         contador = value;
     }
 
     @Quando("eu incrementar em {int}")
-    public void euIncrementarEm(Integer value) {
+    public void euIncrementarEm(int value) {
         contador += value;
     }
 
     @Então("o valor do contador será {int}")
-    public void oValorDoContadorSerá(Integer value) {
-        
+    public void oValorDoContadorSerá(int value) {
+        assertEquals(value, contador);
     }
 }
 

@@ -99,7 +99,8 @@
 - Criação dos cenários com contador
 
 
-
+### Asserts
+- É necessário o Assert para validar o dado
 
 
 
