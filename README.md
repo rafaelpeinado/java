@@ -191,6 +191,9 @@
 - A chegada de uma categoria nova tem que ser vista e levantar uma bandeira com o cliente para entender se existe outra categoria
 
 
+### Testes Data-Driven
+- A estrutura do teste é igual, porém alguns parâmetros são diferentes
+
 
 
 

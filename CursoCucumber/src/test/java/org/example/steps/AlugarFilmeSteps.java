@@ -5,12 +5,12 @@ import io.cucumber.java.pt.Então;
 import io.cucumber.java.pt.Quando;
 import org.example.models.entities.Filme;
 import org.example.models.entities.NotaAluguel;
+import org.example.models.enums.TipoAluguel;
 import org.example.services.AluguelService;
 import org.example.utils.DateUtils;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 
 import static org.junit.Assert.assertEquals;
@@ -21,7 +21,7 @@ public class AlugarFilmeSteps {
     private AluguelService aluguelService = new AluguelService();
     private NotaAluguel notaAluguel;
     private String erro;
-    private String tipoAluguel;
+    private TipoAluguel tipoAluguel = TipoAluguel.COMUM;
 
     @Dado("um filme com estoque de {int} unidades")
     public void umFilmeComEstoqueDeUnidades(int unidades) {
@@ -61,7 +61,9 @@ public class AlugarFilmeSteps {
 
     @Dado("que o tipo de aluguel seja {string}")
     public void queOTipoDeAluguelSejaEstendido(String tipo) {
-        tipoAluguel = tipo;
+        tipoAluguel = tipo.equals("semanal")
+                ? TipoAluguel.SEMANAL : tipo.equals("estendido")
+                ? TipoAluguel.ESTENDIDO : TipoAluguel.COMUM;
     }
 
     @Então("^a data de entrega será em (\\d+) dias?$")
