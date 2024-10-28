@@ -183,6 +183,10 @@
 - Implementação do cenário de alugar filme com sucesso
 
 
+### Cenário: Alugar filme sem estoque
+- O BDD possuir um ciclo, que herdou do TDD que é Red -> Green -> Refact -> Red...
+
+
 
 
 
