@@ -15,6 +15,6 @@ import org.junit.runner.RunWith;
         glue = "org.example.steps"
         // tags = "@esse"
 )
-public class Runner {
+public class RunnerTest {
 
 }

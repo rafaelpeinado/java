@@ -204,7 +204,28 @@
 - json: para conseguir os dados brutos em json
 
 
+### Execução por linha de comando
+- Configurar o ambiente do maven
 
+``` bash
+mvn test
+```
+
+- Renomear Runner para RunnerTest
+
+``` bash
+mvn test
+```
+
+- Agora o comando acima funcionará
+
+``` bash
+mvn test -Dcucumber.options="-h"
+mvn test -Dcucumber.options="-m"
+mvn test -Dcucumber.options="src/test/java/resources/features/aprender-cucumber.feature"
+```
+
+- **m:** monochrome
 
 
 
