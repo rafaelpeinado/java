@@ -195,6 +195,9 @@
 - A estrutura do teste é igual, porém alguns parâmetros são diferentes
 
 
+### DataTable
+- Os DataTables ajudam a organizar o código e os parâmetros passados
+
 
 
 ## Observações e Recomendações
