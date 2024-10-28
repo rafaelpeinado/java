@@ -199,6 +199,14 @@
 - Os DataTables ajudam a organizar o código e os parâmetros passados
 
 
+### Relatórios
+- Relatório em HTML
+- json: para conseguir os dados brutos em json
+
+
+
+
+
 
 ## Observações e Recomendações
 - Specification by Example - Gojko Adzic
