@@ -187,6 +187,9 @@
 - O BDD possuir um ciclo, que herdou do TDD que é Red -> Green -> Refact -> Red...
 
 
+### Cenário: Pontuação por categoria
+- A chegada de uma categoria nova tem que ser vista e levantar uma bandeira com o cliente para entender se existe outra categoria
+
 
 
 
